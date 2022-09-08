@@ -1,0 +1,685 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Thu Sep  8 13:43:13 2022
+# Process ID: 19716
+# Current directory: D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.runs/system_audio_formatter_0_0_synth_1
+# Command line: vivado.exe -log system_audio_formatter_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_audio_formatter_0_0.tcl
+# Log file: D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.runs/system_audio_formatter_0_0_synth_1/system_audio_formatter_0_0.vds
+# Journal file: D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.runs/system_audio_formatter_0_0_synth_1\vivado.jou
+# Running On: DESKTOP-TFS74FU, OS: Windows, CPU Frequency: 2592 MHz, CPU Physical cores: 6, Host memory: 16929 MB
+#-----------------------------------------------------------
+source system_audio_formatter_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 1529.945 ; gain = 581.781
+Command: synth_design -top system_audio_formatter_0_0 -part xc7z020clg484-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 4672
+WARNING: [Synth 8-2507] parameter declaration becomes local in audio_formatter_v1_0_7_s2mm_sync with formal parameter declaration list [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:2493]
+WARNING: [Synth 8-2507] parameter declaration becomes local in audio_formatter_v1_0_7_mm2s_sync with formal parameter declaration list [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4893]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:19 ; elapsed = 00:00:28 . Memory (MB): peak = 1529.945 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'system_audio_formatter_0_0' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ip/system_audio_formatter_0_0/synth/system_audio_formatter_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'audio_formatter_v1_0_7' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:3]
+INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_async_rst' [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:1175]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_async_rst' (1#1) [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:1175]
+INFO: [Synth 8-6157] synthesizing module 'audio_formatter_v1_0_7_mm2s_top' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:3547]
+INFO: [Synth 8-6157] synthesizing module 'audio_formatter_v1_0_7_mm2s_registers' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:3876]
+INFO: [Synth 8-6155] done synthesizing module 'audio_formatter_v1_0_7_mm2s_registers' (2#1) [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:3876]
+INFO: [Synth 8-6157] synthesizing module 'audio_formatter_v1_0_7_reset' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:589]
+INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_single' [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:153]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_single' (3#1) [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:153]
+INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_pulse' [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:715]
+INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_single__parameterized0' [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:153]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_single__parameterized0' (3#1) [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:153]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_pulse' (4#1) [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:715]
+INFO: [Synth 8-6155] done synthesizing module 'audio_formatter_v1_0_7_reset' (5#1) [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:589]
+WARNING: [Synth 8-7071] port 'soft_reset_proc' of module 'audio_formatter_v1_0_7_reset' is unconnected for instance 'reset_mm2s' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:3741]
+WARNING: [Synth 8-7023] instance 'reset_mm2s' of module 'audio_formatter_v1_0_7_reset' has 12 connections declared, but only 11 given [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:3741]
+INFO: [Synth 8-6157] synthesizing module 'audio_formatter_v1_0_7_mm2s_sync' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4831]
+INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_array_single' [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:903]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_array_single' (6#1) [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:903]
+INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_array_single__parameterized0' [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:903]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_array_single__parameterized0' (6#1) [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:903]
+INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_array_single__parameterized1' [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:903]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_array_single__parameterized1' (6#1) [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:903]
+WARNING: [Synth 8-6014] Unused sequential element start_dma_r_aud_reg was removed.  [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:5040]
+INFO: [Synth 8-6155] done synthesizing module 'audio_formatter_v1_0_7_mm2s_sync' (7#1) [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4831]
+INFO: [Synth 8-6157] synthesizing module 'audio_formatter_v1_0_7_mm2s' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4465]
+INFO: [Synth 8-6157] synthesizing module 'audio_formatter_v1_0_7_mm2s_buffer' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:5104]
+INFO: [Synth 8-6157] synthesizing module 'xpm_fifo_sync' [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1951]
+INFO: [Synth 8-6157] synthesizing module 'xpm_fifo_base' [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:56]
+INFO: [Synth 8-6157] synthesizing module 'xpm_counter_updn' [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1858]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_counter_updn' (8#1) [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1858]
+INFO: [Synth 8-6157] synthesizing module 'xpm_counter_updn__parameterized0' [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1858]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_counter_updn__parameterized0' (8#1) [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1858]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base' [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
+INFO: [Synth 8-6059] Synth Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value.   [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:491]
+WARNING: [Synth 8-6014] Unused sequential element gen_rd_b.gen_doutb_pipe.enb_pipe_reg[0] was removed.  [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:3015]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base' (9#1) [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
+INFO: [Synth 8-226] default block is never used [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1206]
+INFO: [Synth 8-226] default block is never used [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1273]
+INFO: [Synth 8-226] default block is never used [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1295]
+INFO: [Synth 8-6157] synthesizing module 'xpm_fifo_reg_bit' [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1906]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_fifo_reg_bit' (10#1) [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1906]
+INFO: [Synth 8-6157] synthesizing module 'xpm_counter_updn__parameterized1' [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1858]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_counter_updn__parameterized1' (10#1) [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1858]
+INFO: [Synth 8-6157] synthesizing module 'xpm_fifo_rst' [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1618]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_fifo_rst' (11#1) [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1618]
+INFO: [Synth 8-6157] synthesizing module 'xpm_counter_updn__parameterized2' [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1858]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_counter_updn__parameterized2' (11#1) [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1858]
+INFO: [Synth 8-6157] synthesizing module 'xpm_counter_updn__parameterized3' [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1858]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_counter_updn__parameterized3' (11#1) [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1858]
+WARNING: [Synth 8-6014] Unused sequential element gdvld.data_valid_std_reg was removed.  [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:537]
+WARNING: [Synth 8-6014] Unused sequential element gen_pntr_flags_cc.gae_cc_std.ram_aempty_i_reg was removed.  [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:968]
+WARNING: [Synth 8-6014] Unused sequential element gen_fwft.empty_fwft_fb_reg was removed.  [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1390]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_fifo_base' (12#1) [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:56]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_fifo_sync' (13#1) [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1951]
+INFO: [Synth 8-6155] done synthesizing module 'audio_formatter_v1_0_7_mm2s_buffer' (14#1) [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:5104]
+INFO: [Synth 8-6157] synthesizing module 'audio_formatter_v1_0_7_mm2s_command_gen' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:5444]
+WARNING: [Synth 8-6014] Unused sequential element INTERLEAVED.start_command_r_reg was removed.  [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:5576]
+WARNING: [Synth 8-6014] Unused sequential element data_ready_r_reg was removed.  [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:5511]
+WARNING: [Synth 8-6014] Unused sequential element periods_transferred_reg was removed.  [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:5813]
+WARNING: [Synth 8-6014] Unused sequential element transfer_count_reg was removed.  [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:5815]
+INFO: [Synth 8-6155] done synthesizing module 'audio_formatter_v1_0_7_mm2s_command_gen' (15#1) [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:5444]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:55439]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_mm2s_full_wrap' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:53572]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_reset' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:153]
+WARNING: [Synth 8-6014] Unused sequential element sig_cmd_stat_rst_int_reg_n_reg was removed.  [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:191]
+WARNING: [Synth 8-6014] Unused sequential element sig_mmap_rst_reg_n_reg was removed.  [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:194]
+WARNING: [Synth 8-6014] Unused sequential element sig_stream_rst_reg_n_reg was removed.  [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:197]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_reset' (16#1) [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:153]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_cmd_status' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:2698]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_fifo' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
+WARNING: [Synth 8-6014] Unused sequential element sig_inhibit_rdy_n_reg was removed.  [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:2014]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo' (17#1) [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_fifo__parameterized0' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
+WARNING: [Synth 8-6014] Unused sequential element sig_inhibit_rdy_n_reg was removed.  [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:2014]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized0' (17#1) [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_cmd_status' (18#1) [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:2698]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_rd_status_cntl' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:13746]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_rd_status_cntl' (19#1) [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:13746]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_pcc' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:7416]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_strb_gen2' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:4342]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_strb_gen2' (20#1) [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:4342]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_strb_gen2__parameterized0' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:4342]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_strb_gen2__parameterized0' (20#1) [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:4342]
+INFO: [Synth 8-226] default block is never used [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:9490]
+WARNING: [Synth 8-6014] Unused sequential element sig_input_reg_full_reg was removed.  [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:8048]
+WARNING: [Synth 8-6014] Unused sequential element sig_xfer_reg_full_reg was removed.  [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:8359]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_pcc' (21#1) [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:7416]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_addr_cntl' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:10000]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_fifo__parameterized1' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_f' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_rbu_f' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-638] synthesizing module 'cntr_incr_decr_addn_f' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:143]
+INFO: [Synth 8-256] done synthesizing module 'cntr_incr_decr_addn_f' (22#1) [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:143]
+INFO: [Synth 8-638] synthesizing module 'dynshreg_f' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'dynshreg_f' (23#1) [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f' (24#1) [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f' (25#1) [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized1' (25#1) [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
+WARNING: [Synth 8-6014] Unused sequential element sig_next_tag_reg_reg was removed.  [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:10410]
+WARNING: [Synth 8-6014] Unused sequential element sig_next_cmd_cmplt_reg_reg was removed.  [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:10417]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_addr_cntl' (26#1) [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:10000]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_rddata_cntl' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:12185]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_rdmux' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:10681]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_rdmux' (27#1) [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:10681]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_fifo__parameterized2' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_f__parameterized0' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_rbu_f__parameterized0' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-638] synthesizing module 'dynshreg_f__parameterized0' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'dynshreg_f__parameterized0' (27#1) [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f__parameterized0' (27#1) [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f__parameterized0' (27#1) [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized2' (27#1) [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
+WARNING: [Synth 8-6014] Unused sequential element sig_next_strt_strb_reg_reg was removed.  [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:12818]
+WARNING: [Synth 8-6014] Unused sequential element sig_next_last_strb_reg_reg was removed.  [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:12819]
+WARNING: [Synth 8-6014] Unused sequential element sig_next_dre_src_align_reg_reg was removed.  [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:12886]
+WARNING: [Synth 8-6014] Unused sequential element sig_next_dre_dest_align_reg_reg was removed.  [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:12887]
+WARNING: [Synth 8-6014] Unused sequential element sig_first_dbeat_reg was removed.  [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:13057]
+WARNING: [Synth 8-6014] Unused sequential element sig_coelsc_reg_empty_reg was removed.  [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:13225]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_rddata_cntl' (28#1) [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:12185]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_mm2s_full_wrap' (29#1) [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:53572]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_s2mm_omit_wrap' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:49604]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_s2mm_omit_wrap' (30#1) [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:49604]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover' (31#1) [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/9b19/hdl/axi_datamover_v5_1_vh_rfs.vhd:55439]
+WARNING: [Synth 8-7071] port 'm_axi_mm2s_arid' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 'm_axi_s2mm_aclk' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 'm_axi_s2mm_aresetn' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 's2mm_halt' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 's2mm_halt_cmplt' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 's2mm_err' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 'm_axis_s2mm_cmdsts_awclk' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 'm_axis_s2mm_cmdsts_aresetn' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 's_axis_s2mm_cmd_tvalid' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 's_axis_s2mm_cmd_tready' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 's_axis_s2mm_cmd_tdata' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 'm_axis_s2mm_sts_tvalid' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 'm_axis_s2mm_sts_tready' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 'm_axis_s2mm_sts_tdata' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 'm_axis_s2mm_sts_tkeep' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 'm_axis_s2mm_sts_tlast' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 's2mm_allow_addr_req' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 's2mm_addr_req_posted' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 's2mm_wr_xfer_cmplt' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 's2mm_ld_nxt_len' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 's2mm_wr_len' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 'm_axi_s2mm_awid' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 'm_axi_s2mm_awaddr' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 'm_axi_s2mm_awlen' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 'm_axi_s2mm_awsize' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 'm_axi_s2mm_awburst' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 'm_axi_s2mm_awprot' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 'm_axi_s2mm_awcache' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 'm_axi_s2mm_awuser' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 'm_axi_s2mm_awvalid' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 'm_axi_s2mm_awready' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 'm_axi_s2mm_wdata' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 'm_axi_s2mm_wstrb' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 'm_axi_s2mm_wlast' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 'm_axi_s2mm_wvalid' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 'm_axi_s2mm_wready' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 'm_axi_s2mm_bresp' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 'm_axi_s2mm_bvalid' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 'm_axi_s2mm_bready' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 's_axis_s2mm_tdata' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 's_axis_s2mm_tkeep' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 's_axis_s2mm_tlast' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 's_axis_s2mm_tvalid' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 's_axis_s2mm_tready' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 's2mm_dbg_sel' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7071] port 's2mm_dbg_data' of module 'axi_datamover' is unconnected for instance 'I_DATAMOVER_MM2S' [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+WARNING: [Synth 8-7023] instance 'I_DATAMOVER_MM2S' of module 'axi_datamover' has 85 connections declared, but only 39 given [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4757]
+INFO: [Synth 8-6155] done synthesizing module 'audio_formatter_v1_0_7_mm2s' (32#1) [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:4465]
+INFO: [Synth 8-6155] done synthesizing module 'audio_formatter_v1_0_7_mm2s_top' (33#1) [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:3547]
+INFO: [Synth 8-226] default block is never used [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:267]
+WARNING: [Synth 8-3848] Net m_axi_s2mm_awaddr in module/entity audio_formatter_v1_0_7 does not have driver. [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:97]
+WARNING: [Synth 8-3848] Net m_axi_s2mm_awlen in module/entity audio_formatter_v1_0_7 does not have driver. [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:99]
+WARNING: [Synth 8-3848] Net m_axi_s2mm_awsize in module/entity audio_formatter_v1_0_7 does not have driver. [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:100]
+WARNING: [Synth 8-3848] Net m_axi_s2mm_awburst in module/entity audio_formatter_v1_0_7 does not have driver. [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:101]
+WARNING: [Synth 8-3848] Net m_axi_s2mm_awprot in module/entity audio_formatter_v1_0_7 does not have driver. [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:102]
+WARNING: [Synth 8-3848] Net m_axi_s2mm_awcache in module/entity audio_formatter_v1_0_7 does not have driver. [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:103]
+WARNING: [Synth 8-3848] Net m_axi_s2mm_awuser in module/entity audio_formatter_v1_0_7 does not have driver. [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:104]
+WARNING: [Synth 8-3848] Net m_axi_s2mm_wdata in module/entity audio_formatter_v1_0_7 does not have driver. [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:108]
+WARNING: [Synth 8-3848] Net m_axi_s2mm_wstrb in module/entity audio_formatter_v1_0_7 does not have driver. [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:109]
+WARNING: [Synth 8-3848] Net m_axi_s2mm_wlast in module/entity audio_formatter_v1_0_7 does not have driver. [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:111]
+INFO: [Synth 8-6155] done synthesizing module 'audio_formatter_v1_0_7' (34#1) [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ipshared/8dbf/hdl/audio_formatter_v1_0_rfs.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'system_audio_formatter_0_0' (35#1) [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ip/system_audio_formatter_0_0/synth/system_audio_formatter_0_0.v:57]
+WARNING: [Synth 8-7129] Port s2mm_aclk in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_aresetn in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmdsts_awclk in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmdsts_aresetn in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wvalid in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[103] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[102] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[101] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[100] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[99] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[98] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[97] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[96] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[95] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[94] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[93] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[92] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[91] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[90] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[89] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[88] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[87] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[86] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[85] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[84] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[83] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[82] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[81] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[80] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[79] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[78] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[77] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[76] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[75] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[74] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[73] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[72] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[71] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[70] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[69] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[68] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[67] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[66] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[65] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[64] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[63] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[62] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[61] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[60] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[59] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[58] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[57] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[56] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[55] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[54] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[53] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[52] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[51] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[50] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[49] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[48] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[47] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[46] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[45] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[44] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[43] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[42] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[41] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[40] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[39] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[38] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[37] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[36] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[35] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[34] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[33] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[32] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[31] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[30] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[29] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[28] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[27] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[26] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[25] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[24] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[23] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[22] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[21] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[20] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[19] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[18] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[17] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[16] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[15] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[14] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[13] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[12] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[11] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[10] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s2mm_cmd_wdata[9] in module axi_datamover_s2mm_omit_wrap is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:34 ; elapsed = 00:00:47 . Memory (MB): peak = 1529.945 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:00:50 . Memory (MB): peak = 1529.945 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:36 ; elapsed = 00:00:50 . Memory (MB): peak = 1529.945 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.513 . Memory (MB): peak = 1529.945 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ip/system_audio_formatter_0_0/system_audio_formatter_0_0_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ip/system_audio_formatter_0_0/system_audio_formatter_0_0_ooc.xdc] for cell 'inst'
+Parsing XDC File [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ip/system_audio_formatter_0_0/system_audio_formatter_0_0.xdc] for cell 'inst'
+Finished Parsing XDC File [d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ip/system_audio_formatter_0_0/system_audio_formatter_0_0.xdc] for cell 'inst'
+Parsing XDC File [D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.runs/system_audio_formatter_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.runs/system_audio_formatter_0_0_synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_array_single.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_audio_formatter_0_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/system_audio_formatter_0_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_audio_formatter_0_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/system_audio_formatter_0_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [F:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/system_audio_formatter_0_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/system_audio_formatter_0_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Project 1-1714] 18 XPM XDC files have been applied to the design.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1614.043 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.274 . Memory (MB): peak = 1614.043 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:01:05 ; elapsed = 00:01:28 . Memory (MB): peak = 1614.043 ; gain = 84.098
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:05 ; elapsed = 00:01:28 . Memory (MB): peak = 1614.043 ; gain = 84.098
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.runs/system_audio_formatter_0_0_synth_1/dont_touch.xdc, line 9).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/\MM2S_INCLUDED.mm2s_top_1 /mm2s_cdc_1/\ASYNC_CLOCKS.xpm_cdc_array_single_dma_count . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/\MM2S_INCLUDED.mm2s_top_1 /mm2s_cdc_1/\ASYNC_CLOCKS.xpm_cdc_array_singe_bsa . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/\MM2S_INCLUDED.mm2s_top_1 /mm2s_cdc_1/xpm_cdc_array_multiplier. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/\MM2S_INCLUDED.xpm_cdc_async_mm2s_rst_inst . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/\MM2S_INCLUDED.mm2s_top_1 /mm2s_cdc_1/\ASYNC_CLOCKS.CDC_DECODE_ERROR_INST . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/\MM2S_INCLUDED.mm2s_top_1 /reset_mm2s/\ASYNC_CLOCKS.CDC_HALT_COMPLETE_INST . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/\MM2S_INCLUDED.mm2s_top_1 /mm2s_cdc_1/\ASYNC_CLOCKS.CDC_SLAVE_ERROR_INST . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/\MM2S_INCLUDED.mm2s_top_1 /reset_mm2s/\ASYNC_CLOCKS.CDC_SOFT_RESET_AXI_INST . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/\MM2S_INCLUDED.mm2s_top_1 /reset_mm2s/\ASYNC_CLOCKS.CDC_SOFT_RESET_INST . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/\MM2S_INCLUDED.mm2s_top_1 /mm2s_cdc_1/\ASYNC_CLOCKS.CDC_START_DMA_INST . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/\MM2S_INCLUDED.mm2s_top_1 /mm2s_cdc_1/CDC_START_DMA_AUD_INST. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/\MM2S_INCLUDED.mm2s_top_1 /reset_mm2s/\ASYNC_CLOCKS.CDC_HALT_INST /xpm_cdc_single_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/\MM2S_INCLUDED.mm2s_top_1 /reset_mm2s/\ASYNC_CLOCKS.CDC_DONE_INST /xpm_cdc_single_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/\MM2S_INCLUDED.mm2s_top_1 /reset_mm2s/\ASYNC_CLOCKS.CDC_PROC_DONE_INST /xpm_cdc_single_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/\MM2S_INCLUDED.mm2s_top_1 /mm2s_cdc_1/\ASYNC_CLOCKS.CDC_CLEAR_COUNT_INST /xpm_cdc_single_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/\MM2S_INCLUDED.mm2s_top_1 /mm2s_cdc_1/\ASYNC_CLOCKS.CDC_PERIOD_INT_INST /xpm_cdc_single_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/\MM2S_INCLUDED.mm2s_top_1 /mm2s_logic_1/buffering_1/CDC_SAMPLE_PULSE_INST/xpm_cdc_single_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/\MM2S_INCLUDED.mm2s_top_1 /mm2s_logic_1/buffering_1/\INTERLEAVED.interleaved_xpm_fifo_buffer . (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:05 ; elapsed = 00:01:28 . Memory (MB): peak = 1614.043 ; gain = 84.098
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'stmWrite_reg' in module 'audio_formatter_v1_0_7_mm2s_registers'
+INFO: [Synth 8-802] inferred FSM for state register 'gen_fwft.curr_fwft_state_reg' in module 'xpm_fifo_base'
+INFO: [Synth 8-802] inferred FSM for state register 'sig_pcc_sm_state_reg' in module 'axi_datamover_pcc'
+INFO: [Synth 8-802] inferred FSM for state register 'stmRead_reg' in module 'audio_formatter_v1_0_7'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+             sWriteReset |                               00 |                              000
+              sWriteAddr |                               01 |                              001
+              sWriteData |                               10 |                              010
+              sWriteResp |                               11 |                              011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'stmWrite_reg' using encoding 'sequential' in module 'audio_formatter_v1_0_7_mm2s_registers'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 invalid |                               00 |                               00
+            stage1_valid |                               01 |                               10
+       both_stages_valid |                               10 |                               11
+            stage2_valid |                               11 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'gen_fwft.curr_fwft_state_reg' using encoding 'sequential' in module 'xpm_fifo_base'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    init |                         00000001 |                              000
+            wait_for_cmd |                         00000010 |                              001
+                  calc_1 |                         00000100 |                              010
+                  calc_2 |                         00001000 |                              011
+                  calc_3 |                         00010000 |                              100
+       wait_on_xfer_push |                         00100000 |                              101
+             chk_if_done |                         01000000 |                              110
+              error_trap |                         10000000 |                              111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'sig_pcc_sm_state_reg' using encoding 'one-hot' in module 'axi_datamover_pcc'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              sReadReset |                               00 |                               00
+               sReadAddr |                               01 |                               01
+             sDecodeAddr |                               10 |                               10
+               sReadData |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'stmRead_reg' using encoding 'sequential' in module 'audio_formatter_v1_0_7'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:09 ; elapsed = 00:01:33 . Memory (MB): peak = 1614.043 ; gain = 84.098
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   64 Bit       Adders := 1     
+	   3 Input   16 Bit       Adders := 1     
+	   2 Input   16 Bit       Adders := 4     
+	   2 Input   11 Bit       Adders := 1     
+	   2 Input   10 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 4     
+	   4 Input    6 Bit       Adders := 4     
+	   2 Input    6 Bit       Adders := 1     
+	   4 Input    5 Bit       Adders := 5     
+	   3 Input    5 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 2     
+	   3 Input    3 Bit       Adders := 3     
+	   2 Input    3 Bit       Adders := 2     
+	   4 Input    2 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 3     
++---XORs : 
+	   2 Input      1 Bit         XORs := 13    
++---Registers : 
+	              192 Bit    Registers := 2     
+	              100 Bit    Registers := 1     
+	               64 Bit    Registers := 6     
+	               32 Bit    Registers := 4     
+	               25 Bit    Registers := 2     
+	               23 Bit    Registers := 1     
+	               16 Bit    Registers := 13    
+	               12 Bit    Registers := 2     
+	                8 Bit    Registers := 9     
+	                6 Bit    Registers := 6     
+	                5 Bit    Registers := 6     
+	                4 Bit    Registers := 20    
+	                3 Bit    Registers := 8     
+	                2 Bit    Registers := 17    
+	                1 Bit    Registers := 176   
++---RAMs : 
+	             1024 Bit	(32 X 32 bit)          RAMs := 1     
++---Muxes : 
+	  16 Input  192 Bit        Muxes := 1     
+	  16 Input   64 Bit        Muxes := 1     
+	   2 Input   64 Bit        Muxes := 3     
+	   2 Input   32 Bit        Muxes := 8     
+	   3 Input   32 Bit        Muxes := 1     
+	   4 Input   32 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 6     
+	   4 Input   12 Bit        Muxes := 1     
+	   2 Input    9 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 9     
+	   8 Input    8 Bit        Muxes := 1     
+	   4 Input    8 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 7     
+	   4 Input    4 Bit        Muxes := 4     
+	   2 Input    3 Bit        Muxes := 2     
+	   3 Input    3 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 10    
+	   2 Input    2 Bit        Muxes := 38    
+	  15 Input    2 Bit        Muxes := 1     
+	   3 Input    2 Bit        Muxes := 1     
+	   4 Input    1 Bit        Muxes := 17    
+	  15 Input    1 Bit        Muxes := 7     
+	   2 Input    1 Bit        Muxes := 82    
+	   3 Input    1 Bit        Muxes := 2     
+	   8 Input    1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:26 ; elapsed = 00:01:54 . Memory (MB): peak = 1614.043 ; gain = 84.098
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping Report (see note below)
++------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name                                                                                                                                           | RTL Object                       | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|inst/\MM2S_INCLUDED.mm2s_top_1/mm2s_logic_1/buffering_1/INTERLEAVED.interleaved_xpm_fifo_buffer /xpm_fifo_base_inst/\gen_sdpram.xpm_memory_base_inst  | gen_wr_a.gen_word_narrow.mem_reg | 32 x 32(READ_FIRST)    | W |   | 32 x 32(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
++------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:39 ; elapsed = 00:02:09 . Memory (MB): peak = 1614.043 ; gain = 84.098
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:42 ; elapsed = 00:02:12 . Memory (MB): peak = 1614.043 ; gain = 84.098
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name                                                                                                                                           | RTL Object                       | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|inst/\MM2S_INCLUDED.mm2s_top_1/mm2s_logic_1/buffering_1/INTERLEAVED.interleaved_xpm_fifo_buffer /xpm_fifo_base_inst/\gen_sdpram.xpm_memory_base_inst  | gen_wr_a.gen_word_narrow.mem_reg | 32 x 32(READ_FIRST)    | W |   | 32 x 32(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
++------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:44 ; elapsed = 00:02:13 . Memory (MB): peak = 1614.043 ; gain = 84.098
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3295] tying undriven pin MM2S_INCLUDED.mm2s_top_1/mm2s_logic_1/I_DATAMOVER_MM2S/m_axis_s2mm_cmdsts_awclk_inferred:in0 to constant 0
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:50 ; elapsed = 00:02:20 . Memory (MB): peak = 1614.043 ; gain = 84.098
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:50 ; elapsed = 00:02:20 . Memory (MB): peak = 1614.043 ; gain = 84.098
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:51 ; elapsed = 00:02:21 . Memory (MB): peak = 1614.043 ; gain = 84.098
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:51 ; elapsed = 00:02:21 . Memory (MB): peak = 1614.043 ; gain = 84.098
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:51 ; elapsed = 00:02:21 . Memory (MB): peak = 1614.043 ; gain = 84.098
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:51 ; elapsed = 00:02:21 . Memory (MB): peak = 1614.043 ; gain = 84.098
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Dynamic Shift Register Report:
++------------+--------------------------+--------+------------+--------+---------+--------+--------+--------+
+|Module Name | RTL Name                 | Length | Data Width | SRL16E | SRLC32E | Mux F7 | Mux F8 | Mux F9 | 
++------------+--------------------------+--------+------------+--------+---------+--------+--------+--------+
+|dsrl        | INFERRED_GEN.data_reg[3] | 91     | 91         | 91     | 0       | 0      | 0      | 0      | 
+|dsrl__1     | INFERRED_GEN.data_reg[3] | 29     | 29         | 29     | 0       | 0      | 0      | 0      | 
++------------+--------------------------+--------+------------+--------+---------+--------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |CARRY4   |    82|
+|2     |LUT1     |    14|
+|3     |LUT2     |   115|
+|4     |LUT3     |   221|
+|5     |LUT4     |   192|
+|6     |LUT5     |   182|
+|7     |LUT6     |   286|
+|8     |MUXF7    |    31|
+|9     |RAMB18E1 |     1|
+|10    |SRL16E   |    86|
+|11    |FDCE     |     2|
+|12    |FDRE     |  1388|
+|13    |FDSE     |    28|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:51 ; elapsed = 00:02:21 . Memory (MB): peak = 1614.043 ; gain = 84.098
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 600 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:07 ; elapsed = 00:02:09 . Memory (MB): peak = 1614.043 ; gain = 0.000
+Synthesis Optimization Complete : Time (s): cpu = 00:01:51 ; elapsed = 00:02:21 . Memory (MB): peak = 1614.043 ; gain = 84.098
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.130 . Memory (MB): peak = 1614.043 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 114 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1614.043 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: 7d2ae729
+INFO: [Common 17-83] Releasing license: Synthesis
+132 Infos, 186 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:02:02 ; elapsed = 00:02:36 . Memory (MB): peak = 1614.043 ; gain = 84.098
+INFO: [Common 17-1381] The checkpoint 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.runs/system_audio_formatter_0_0_synth_1/system_audio_formatter_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP system_audio_formatter_0_0, cache-ID = 28dc23f884435718
+INFO: [Coretcl 2-1174] Renamed 62 cell refs.
+INFO: [Common 17-1381] The checkpoint 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.runs/system_audio_formatter_0_0_synth_1/system_audio_formatter_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file system_audio_formatter_0_0_utilization_synth.rpt -pb system_audio_formatter_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Sep  8 13:46:33 2022...

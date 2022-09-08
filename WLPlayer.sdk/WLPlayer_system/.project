@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>WLPlayer_system</name>
+	<comment>Created by Vitis v2021.2</comment>
+	<projects>
+		<project>WLPlayer</project>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>com.xilinx.sdx.scw.PlatformProjectBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.xilinx.sdx.scw.platformProject</nature>
+		<nature>org.eclipse.cdt.core.cnature</nature>
+	</natures>
+</projectDescription>

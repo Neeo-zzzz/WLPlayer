@@ -1,0 +1,24 @@
+verilog xil_defaultlib --include "F:/Xilinx/Vivado/2021.2/data/xilinx_vip/include" --include "../../../../WLPlayer.gen/sources_1/bd/system/ipshared/ec67/hdl" --include "../../../../WLPlayer.gen/sources_1/bd/system/ipshared/3007/hdl" --include "../../../../WLPlayer.gen/sources_1/bd/system/ipshared/62b6" --include "../../../../WLPlayer.gen/sources_1/bd/system/ipshared/36fa/hdl" \
+"../../../bd/system/ip/system_processing_system7_0_0/sim/system_processing_system7_0_0.v" \
+"../../../bd/system/ip/system_audio_formatter_0_0/sim/system_audio_formatter_0_0.v" \
+
+sv xil_defaultlib --include "F:/Xilinx/Vivado/2021.2/data/xilinx_vip/include" --include "../../../../WLPlayer.gen/sources_1/bd/system/ipshared/ec67/hdl" --include "../../../../WLPlayer.gen/sources_1/bd/system/ipshared/3007/hdl" --include "../../../../WLPlayer.gen/sources_1/bd/system/ipshared/62b6" --include "../../../../WLPlayer.gen/sources_1/bd/system/ipshared/36fa/hdl" \
+"../../../bd/system/ip/system_i2s_transmitter_0_0/sim/system_i2s_transmitter_0_0.sv" \
+
+verilog xil_defaultlib --include "F:/Xilinx/Vivado/2021.2/data/xilinx_vip/include" --include "../../../../WLPlayer.gen/sources_1/bd/system/ipshared/ec67/hdl" --include "../../../../WLPlayer.gen/sources_1/bd/system/ipshared/3007/hdl" --include "../../../../WLPlayer.gen/sources_1/bd/system/ipshared/62b6" --include "../../../../WLPlayer.gen/sources_1/bd/system/ipshared/36fa/hdl" \
+"../../../bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0_clk_wiz.v" \
+"../../../bd/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0.v" \
+"../../../bd/system/ip/system_util_vector_logic_0_0/sim/system_util_vector_logic_0_0.v" \
+"../../../bd/system/ip/system_xlconstant_0_0/sim/system_xlconstant_0_0.v" \
+"../../../bd/system/ip/system_v_axi4s_vid_out_0_0/sim/system_v_axi4s_vid_out_0_0.v" \
+"../../../bd/system/ip/system_video_to_vga_0_0/sim/system_video_to_vga_0_0.v" \
+"../../../bd/system/ip/system_xbar_0/sim/system_xbar_0.v" \
+"../../../bd/system/ip/system_xbar_1/sim/system_xbar_1.v" \
+"../../../bd/system/sim/system.v" \
+"../../../bd/system/ip/system_auto_pc_0/sim/system_auto_pc_0.v" \
+"../../../bd/system/ip/system_auto_us_0/sim/system_auto_us_0.v" \
+"../../../bd/system/ip/system_auto_pc_1/sim/system_auto_pc_1.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

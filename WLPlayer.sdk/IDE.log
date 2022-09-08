@@ -1,0 +1,26 @@
+15:25:08 INFO  : Launching XSCT server: xsct.bat -n  -interactive D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\temp_xsdb_launch_script.tcl
+15:25:08 INFO  : Registering command handlers for Vitis TCF services
+15:25:08 INFO  : Platform repository initialization has completed.
+15:25:11 INFO  : XSCT server has started successfully.
+15:25:12 INFO  : Successfully done setting XSCT server connection channel  
+15:25:12 INFO  : plnx-install-location is set to ''
+15:25:12 INFO  : Successfully done query RDI_DATADIR 
+15:25:12 INFO  : Successfully done setting workspace for the tool. 
+15:26:01 INFO  : Result from executing command 'getProjects': WLPlayer_system
+15:26:01 INFO  : Result from executing command 'getPlatforms': 
+15:26:01 WARN  : An unexpected exception occurred in the module 'platform project logging'
+15:26:02 INFO  : Platform 'WLPlayer_system' is added to custom repositories.
+15:26:09 INFO  : Platform 'WLPlayer_system' is added to custom repositories.
+15:31:56 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer'...
+15:32:17 INFO  : Result from executing command 'getProjects': WLPlayer_system
+15:32:17 INFO  : Result from executing command 'getPlatforms': WLPlayer_system|D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/WLPlayer_system.xpfm
+15:32:18 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+15:32:18 INFO  : Updating application flags with new BSP settings...
+15:32:18 INFO  : Successfully updated application flags for project WLPlayer_Software.
+15:52:17 INFO  : No changes in MSS file content so sources will not be generated.
+15:54:16 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer'...
+15:54:16 INFO  : Updating application flags with new BSP settings...
+15:54:16 INFO  : Successfully updated application flags for project WLPlayer.
+15:54:19 INFO  : Result from executing command 'getProjects': WLPlayer_system
+15:54:19 INFO  : Result from executing command 'getPlatforms': WLPlayer_system|D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/WLPlayer_system.xpfm
+15:54:19 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
