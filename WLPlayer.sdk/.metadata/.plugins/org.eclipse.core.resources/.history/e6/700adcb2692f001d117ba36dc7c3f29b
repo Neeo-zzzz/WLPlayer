@@ -1,0 +1,8 @@
+#ifndef _INTERRUPT_
+#define _INTERRUPT_
+#include "defs.h"
+
+///////////////////////////////////macro//////////////////////////////
+#define INTC_DEVICE_ID XPAR_SCUGIC_SINGLE_DEVICE_ID
+
+#endif

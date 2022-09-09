@@ -70,12 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "system_processing_system7_0_0_synth_1" START { ROLLUP_AUTO }
-set_param checkpoint.writeSynthRtdsInDcp 1
-set_param synth.incrementalSynthesisCache C:/Users/Neeo/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-12608-DESKTOP-TFS74FU/incrSyn
-set_msg_config -id {Common 17-41} -limit 10000000
-set_msg_config -id {HDL-1065} -limit 10000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 OPTRACE "Creating in-memory project" START { }
@@ -94,7 +88,7 @@ set_property ip_output_repo d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WL
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.xci
+read_ip -quiet D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.xci
 set_property used_in_implementation false [get_files -all d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.xdc]
 
 OPTRACE "Adding files" END { }

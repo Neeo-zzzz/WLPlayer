@@ -1,0 +1,198 @@
+#ifndef _AUDIO_
+#define _AUDIO_
+
+#include "defs.h"
+
+/**
+ * This file mainly init the IIC, the Audio DMA and the I2S transmitter,
+ * Then it will set the audio interrupt system, read data from SD and play
+ * the music.
+ */
+////////////////////////////////macro/////////////////////////////////
+#define AUDIO_ADMA_DEV_ID XPAR_XAUDIOFORMATTER_0_DEVICE_ID //ADMA device ID
+#define AUDIO_I2S_TX_DEV_ID XPAR_XI2STX_0_DEVICE_ID //I2S trans device ID
+#define AUDIO_TX_INTR_ID XPAR_FABRIC_AUDIO_FORMATTER_0_VEC_ID //ADMA intr ID
+#define AUDIO_IIC_DEV_ID XPAR_XIICPS_0_DEVICE_ID //IIC device ID
+#define AUDIO_BUFFER_BASE MEM_BASE_ADDR + AUDIO_ADDR_OFFSET // the data read start addr
+#define INTC_DEV_ID XPAR_SCUGIC_SINGLE_DEVICE_ID //GIC
+//I2S clock
+#define AUDIO_FS 48
+#define AUDIO_MCLK 384*48
+//IIC
+#define AUDIO_IIC_SCLK_RATE 100000
+#define AUDIO_IIC_ADAU1761_ADDR (0x76>>1)
+//ADMA period
+#define AUDIO_PERIOD 8
+#define AUDIO_BYTES_PER_PERIOD 1024 //a ratio of 32*2
+
+//////////////////////////////global variable//////////////////////////////
+//ADAU1761
+enum audio_regs {
+	R0_CLOCK_CONTROL								= 0x00,
+	R1_PLL_CONTROL 									= 0x02,
+	R2_DIGITAL_MIC_JACK_DETECTION_CONTROL 			= 0x08,
+	R3_RECORD_POWER_MANAGEMENT						= 0x09,
+	R4_RECORD_MIXER_LEFT_CONTROL_0 					= 0x0A,
+	R5_RECORD_MIXER_LEFT_CONTROL_1 					= 0x0B,
+	R6_RECORD_MIXER_RIGHT_CONTROL_0 				= 0x0C,
+	R7_RECORD_MIXER_RIGHT_CONTROL_1 				= 0x0D,
+	R8_LEFT_DIFFERENTIAL_INPUT_VOLUME_CONTROL 		= 0x0E,
+	R9_RIGHT_DIFFERENTIAL_INPUT_VOLUME_CONTROL 		= 0x0F,
+	R10_RECORD_MICROPHONE_BIAS_CONTROL 				= 0x10,
+	R11_ALC_CONTROL_0								= 0x11,
+	R12_ALC_CONTROL_1								= 0x12,
+	R13_ALC_CONTROL_2								= 0x13,
+	R14_ALC_CONTROL_3								= 0x14,
+	R15_SERIAL_PORT_CONTROL_0 						= 0x15,
+	R16_SERIAL_PORT_CONTROL_1 						= 0x16,
+	R17_CONVERTER_CONTROL_0 						= 0x17,
+	R18_CONVERTER_CONTROL_1 						= 0x18,
+	R19_ADC_CONTROL									= 0x19,
+	R20_LEFT_INPUT_DIGITAL_VOLUME 					= 0x1A,
+	R21_RIGHT_INPUT_DIGITAL_VOLUME 					= 0x1B,
+	R22_PLAYBACK_MIXER_LEFT_CONTROL_0 				= 0x1C,
+	R23_PLAYBACK_MIXER_LEFT_CONTROL_1 				= 0x1D,
+	R24_PLAYBACK_MIXER_RIGHT_CONTROL_0 				= 0x1E,
+	R25_PLAYBACK_MIXER_RIGHT_CONTROL_1 				= 0x1F,
+	R26_PLAYBACK_LR_MIXER_LEFT_LINE_OUTPUT_CONTROL 	= 0x20,
+	R27_PLAYBACK_LR_MIXER_RIGHT_LINE_OUTPUT_CONTROL = 0x21,
+	R28_PLAYBACK_LR_MIXER_MONO_OUTPUT_CONTROL 		= 0x22,
+	R29_PLAYBACK_HEADPHONE_LEFT_VOLUME_CONTROL 		= 0x23,
+	R30_PLAYBACK_HEADPHONE_RIGHT_VOLUME_CONTROL 	= 0x24,
+	R31_PLAYBACK_LINE_OUTPUT_LEFT_VOLUME_CONTROL 	= 0x25,
+	R32_PLAYBACK_LINE_OUTPUT_RIGHT_VOLUME_CONTROL 	= 0x26,
+	R33_PLAYBACK_MONO_OUTPUT_CONTROL 				= 0x27,
+	R34_PLAYBACK_POP_CLICK_SUPPRESSION 				= 0x28,
+	R35_PLAYBACK_POWER_MANAGEMENT 					= 0x29,
+	R36_DAC_CONTROL_0 								= 0x2A,
+	R37_DAC_CONTROL_1 								= 0x2B,
+	R38_DAC_CONTROL_2 								= 0x2C,
+	R39_SERIAL_PORT_PAD_CONTROL 					= 0x2D,
+	R40_CONTROL_PORT_PAD_CONTROL_0 					= 0x2F,
+	R41_CONTROL_PORT_PAD_CONTROL_1 					= 0x30,
+	R42_JACK_DETECT_PIN_CONTROL 					= 0x31,
+	R67_DEJITTER_CONTROL 							= 0x36,
+	R58_SERIAL_INPUT_ROUTE_CONTROL					= 0xF2,
+	R59_SERIAL_OUTPUT_ROUTE_CONTROL					= 0xF3,
+	R61_DSP_ENABLE									= 0xF5,
+	R62_DSP_RUN										= 0xF6,
+	R63_DSP_SLEW_MODES								= 0xF7,
+	R64_SERIAL_PORT_SAMPLING_RATE 					= 0xF8,
+	R65_CLOCK_ENABLE_0 								= 0xF9,
+	R66_CLOCK_ENABLE_1 								= 0xFA
+};
+
+/////////////////////////////struct////////////////////////////////////
+
+typedef struct _music
+{
+	char name[20]; //the music file name
+	u32 length; //the music data length in bytes
+	u32 now_positon; //now playing position in bytes
+	u8 is_playing; //is playing(1) or stop(0)
+	u8* buf_postion; //the current play period's data pointer
+	FIL file; //the file descriptor
+} music;
+
+/////////////////////////////function//////////////////////////////////
+
+//basic initialize
+/**
+ * This function will initialize the IIC, Audio DMA, I2s transmitter,
+ * SD file system and connect the interrupt. It should be called after
+ * set up the interrupt system.
+ * @return 0:init successs 1:init fail.
+ */
+int AudioInitialize();
+
+/**
+ * init the scugic and the exception handler
+ * @return 0:success 1:failed
+ */
+int IntcInitialize();
+
+/**
+ * init the adma, connect the callback function: AdmaIOCHandler
+ */
+void AdmaInitialize();
+
+/**
+ * The interrupt of finish one period of audio data convert will call this function
+ */
+static void AdmaIOCHandler(void* callback);
+
+/**
+ * init the IIC controler
+ */
+void IICInitialize();
+
+/**
+ * init the IIS transmitter
+ */
+void IISTransInitialize();
+
+/**
+ * connect the ADMA interrupt to GIC, with priority and trigger set, enabled.
+ */
+void AdmaInterruptInitialize();
+
+/**
+ * init the FS, mount the SD card
+ */
+int FSInitialize();
+
+//IIC
+
+/**
+ * write one btyes reg in ADAU1761
+ * @param u8 the reg addr to write
+ * @param u8 the constant to be written
+ */
+void AudioWriteReg(u8 reg_addr, u8 reg_data);
+
+/**
+ * set the core clock in the ADAU1761. Then can we edit other register.
+ * In this project the input MCLK is 12MHz, we set the PLL to generate
+ * the 1024*FS clock signal. We temporarily pin the FS as 48KHz.
+ */
+void AudioADAUPLLConfigure();
+
+/**
+ * init the ADAU1761 configuration
+ */
+void ConfigADAU1761();
+
+//music player function
+
+/**
+ * To implement a simple music player control, a global struct music pointer will be
+ * held. It will indicate the current play music and the play progress. Every time we
+ * switch to a new music, we must destroy the least music struct and alloc new music struct
+ *
+ * To implement the control of the volume, a global volume varible will be held.
+ *
+ * Basic function includes play, stop, volume up, volume down, switch between different music.
+ *
+ */
+
+/**
+ * start to play a music with a specify name
+ * @param music file name in FS
+ * @return 1: play success 0: play failed
+ */
+int PlayMusic(char* name);
+
+/**
+ * This function will open the specify file and create the right music struct.
+ * It will read the file, analysis the file, alloc the music struct
+ * @return failed with 0 return
+ */
+music* AllocMusic();
+
+/**
+ * Destroy the music struct.
+ */
+void DestroyMusic(music* mp);
+
+
+#endif

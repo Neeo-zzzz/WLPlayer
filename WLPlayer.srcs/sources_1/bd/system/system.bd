@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x2C76F6EFD2EDFEA2",
+      "boundary_crc": "0x2C76F6EF2837CF1F",
       "device": "xc7z020clg484-1",
       "gen_directory": "../../../../WLPlayer.gen/sources_1/bd/system",
       "name": "system",
@@ -130,31 +130,6 @@
       "aud_sdata": {
         "direction": "O"
       },
-      "aud_mclk": {
-        "type": "clk",
-        "direction": "O",
-        "parameters": {
-          "CLK_DOMAIN": {
-            "value": "/clk_wiz_0_clk_out1",
-            "value_src": "ip_prop"
-          },
-          "FREQ_HZ": {
-            "value": "11998820"
-          },
-          "FREQ_TOLERANCE_HZ": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "PHASE": {
-            "value": "0.0",
-            "value_src": "ip_prop"
-          }
-        }
-      },
       "aud_addr": {
         "direction": "O",
         "left": "1",
@@ -170,6 +145,31 @@
       },
       "vga_vsync_0": {
         "direction": "O"
+      },
+      "aud_mclk": {
+        "type": "clk",
+        "direction": "O",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "system_processing_system7_0_0_FCLK_CLK2",
+            "value_src": "default_prop"
+          },
+          "FREQ_HZ": {
+            "value": "12000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
       }
     },
     "components": {
@@ -201,7 +201,7 @@
             "value": "50.000000"
           },
           "PCW_ACT_FPGA2_PERIPHERAL_FREQMHZ": {
-            "value": "10.000000"
+            "value": "12.000000"
           },
           "PCW_ACT_FPGA3_PERIPHERAL_FREQMHZ": {
             "value": "10.000000"
@@ -255,7 +255,7 @@
             "value": "50000000"
           },
           "PCW_CLK2_FREQ": {
-            "value": "10000000"
+            "value": "12000000"
           },
           "PCW_CLK3_FREQ": {
             "value": "10000000"
@@ -264,6 +264,9 @@
             "value": "0x3FFFFFFF"
           },
           "PCW_EN_CLK1_PORT": {
+            "value": "1"
+          },
+          "PCW_EN_CLK2_PORT": {
             "value": "1"
           },
           "PCW_EN_EMIO_GPIO": {
@@ -287,13 +290,22 @@
           "PCW_FCLK_CLK1_BUF": {
             "value": "TRUE"
           },
+          "PCW_FCLK_CLK2_BUF": {
+            "value": "TRUE"
+          },
           "PCW_FPGA0_PERIPHERAL_FREQMHZ": {
             "value": "100"
+          },
+          "PCW_FPGA2_PERIPHERAL_FREQMHZ": {
+            "value": "12"
           },
           "PCW_FPGA_FCLK0_ENABLE": {
             "value": "1"
           },
           "PCW_FPGA_FCLK1_ENABLE": {
+            "value": "1"
+          },
+          "PCW_FPGA_FCLK2_ENABLE": {
             "value": "1"
           },
           "PCW_GPIO_EMIO_GPIO_ENABLE": {
@@ -318,7 +330,7 @@
             "value": "1"
           },
           "PCW_MIO_1_IOTYPE": {
-            "value": "LVCMOS 3.3V"
+            "value": "LVCMOS 1.8V"
           },
           "PCW_MIO_1_PULLUP": {
             "value": "enabled"
@@ -327,13 +339,13 @@
             "value": "slow"
           },
           "PCW_MIO_2_IOTYPE": {
-            "value": "LVCMOS 3.3V"
+            "value": "LVCMOS 1.8V"
           },
           "PCW_MIO_2_SLEW": {
             "value": "slow"
           },
           "PCW_MIO_3_IOTYPE": {
-            "value": "LVCMOS 3.3V"
+            "value": "LVCMOS 1.8V"
           },
           "PCW_MIO_3_SLEW": {
             "value": "slow"
@@ -411,19 +423,19 @@
             "value": "slow"
           },
           "PCW_MIO_4_IOTYPE": {
-            "value": "LVCMOS 3.3V"
+            "value": "LVCMOS 1.8V"
           },
           "PCW_MIO_4_SLEW": {
             "value": "slow"
           },
           "PCW_MIO_5_IOTYPE": {
-            "value": "LVCMOS 3.3V"
+            "value": "LVCMOS 1.8V"
           },
           "PCW_MIO_5_SLEW": {
             "value": "slow"
           },
           "PCW_MIO_6_IOTYPE": {
-            "value": "LVCMOS 3.3V"
+            "value": "LVCMOS 1.8V"
           },
           "PCW_MIO_6_SLEW": {
             "value": "slow"
@@ -435,7 +447,7 @@
             "value": "unassigned#qspi0_ss_b#qspi0_io[0]#qspi0_io[1]#qspi0_io[2]#qspi0_io[3]/HOLD_B#qspi0_sclk#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#unassigned#clk#cmd#data[0]#data[1]#data[2]#data[3]#unassigned#unassigned#tx#rx#unassigned#unassigned#unassigned#unassigned"
           },
           "PCW_PRESET_BANK0_VOLTAGE": {
-            "value": "LVCMOS 3.3V"
+            "value": "LVCMOS 1.8V"
           },
           "PCW_PRESET_BANK1_VOLTAGE": {
             "value": "LVCMOS 1.8V"
@@ -704,10 +716,10 @@
         "inst_hier_path": "clk_wiz_0",
         "parameters": {
           "CLKOUT1_JITTER": {
-            "value": "643.539"
+            "value": "437.060"
           },
           "CLKOUT1_PHASE_ERROR": {
-            "value": "565.323"
+            "value": "514.970"
           },
           "CLKOUT1_REQUESTED_OUT_FREQ": {
             "value": "18.432"
@@ -722,22 +734,22 @@
             "value": "12"
           },
           "CLKOUT2_USED": {
-            "value": "true"
+            "value": "false"
           },
           "MMCM_CLKFBOUT_MULT_F": {
-            "value": "50.875"
+            "value": "61.125"
           },
           "MMCM_CLKOUT0_DIVIDE_F": {
-            "value": "34.500"
+            "value": "47.375"
           },
           "MMCM_CLKOUT1_DIVIDE": {
-            "value": "53"
+            "value": "1"
           },
           "MMCM_DIVCLK_DIVIDE": {
-            "value": "8"
+            "value": "7"
           },
           "NUM_OUT_CLKS": {
-            "value": "2"
+            "value": "1"
           },
           "USE_RESET": {
             "value": "false"
@@ -1980,12 +1992,6 @@
           "audio_formatter_0/aud_mclk"
         ]
       },
-      "clk_wiz_0_clk_out2": {
-        "ports": [
-          "clk_wiz_0/clk_out2",
-          "aud_mclk"
-        ]
-      },
       "clk_wiz_0_locked": {
         "ports": [
           "clk_wiz_0/locked",
@@ -2042,6 +2048,12 @@
           "v_tc_0/clk",
           "v_axi4s_vid_out_0/vid_io_out_clk",
           "video_to_vga_0/pixel_clk"
+        ]
+      },
+      "processing_system7_0_FCLK_CLK2": {
+        "ports": [
+          "processing_system7_0/FCLK_CLK2",
+          "aud_mclk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {

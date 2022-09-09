@@ -1,0 +1,12 @@
+#ifndef _FS_
+#define _FS_
+#include "ff.h"
+#include "xil_cache.h"
+#include "xil_types.h"
+#include "stdio.h"
+
+int init_fs();
+int sd_write_data(char* file_name, u32 src_addr,u32 byte_len);
+int sd_read_data(char* file_name,u32 src_addr,u32 byte_len);
+void read_wav(char* file_name,u32 addr,int len);
+#endif

@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-//Date        : Thu Sep  8 15:48:26 2022
+//Date        : Fri Sep  9 20:06:04 2022
 //Host        : DESKTOP-TFS74FU running 64-bit major release  (build 9200)
 //Command     : generate_target system.bd
 //Design      : system
@@ -1416,9 +1416,9 @@ module system
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR RAS_N" *) inout DDR_ras_n;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR RESET_N" *) inout DDR_reset_n;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR WE_N" *) inout DDR_we_n;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 EMIO_GPIO_0 " *) input [7:0]EMIO_GPIO_0_tri_i;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 EMIO_GPIO_0 " *) output [7:0]EMIO_GPIO_0_tri_o;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 EMIO_GPIO_0 " *) output [7:0]EMIO_GPIO_0_tri_t;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 EMIO_GPIO_0 TRI_I" *) input [7:0]EMIO_GPIO_0_tri_i;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 EMIO_GPIO_0 TRI_O" *) output [7:0]EMIO_GPIO_0_tri_o;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 EMIO_GPIO_0 TRI_T" *) output [7:0]EMIO_GPIO_0_tri_t;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO DDR_VRN" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME FIXED_IO, CAN_DEBUG false" *) inout FIXED_IO_ddr_vrn;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO DDR_VRP" *) inout FIXED_IO_ddr_vrp;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO MIO" *) inout [53:0]FIXED_IO_mio;
@@ -1426,14 +1426,14 @@ module system
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_PORB" *) inout FIXED_IO_ps_porb;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB" *) inout FIXED_IO_ps_srstb;
   output [1:0]aud_addr;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:iic:1.0 aud_iic " *) input aud_iic_scl_i;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:iic:1.0 aud_iic " *) output aud_iic_scl_o;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:iic:1.0 aud_iic " *) output aud_iic_scl_t;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:iic:1.0 aud_iic " *) input aud_iic_sda_i;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:iic:1.0 aud_iic " *) output aud_iic_sda_o;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:iic:1.0 aud_iic " *) output aud_iic_sda_t;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:iic:1.0 aud_iic SCL_I" *) input aud_iic_scl_i;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:iic:1.0 aud_iic SCL_O" *) output aud_iic_scl_o;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:iic:1.0 aud_iic SCL_T" *) output aud_iic_scl_t;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:iic:1.0 aud_iic SDA_I" *) input aud_iic_sda_i;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:iic:1.0 aud_iic SDA_O" *) output aud_iic_sda_o;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:iic:1.0 aud_iic SDA_T" *) output aud_iic_sda_t;
   output aud_lrclk;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.AUD_MCLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.AUD_MCLK, CLK_DOMAIN /clk_wiz_0_clk_out1, FREQ_HZ 11998820, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) output aud_mclk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.AUD_MCLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.AUD_MCLK, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK2, FREQ_HZ 12000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) output aud_mclk;
   output aud_sclk;
   output aud_sdata;
   output [11:0]vga_data_out;
@@ -1515,7 +1515,6 @@ module system
   wire [0:0]axi_vdma_0_M_AXIS_MM2S_TUSER;
   wire axi_vdma_0_M_AXIS_MM2S_TVALID;
   wire clk_wiz_0_clk_out1;
-  wire clk_wiz_0_clk_out2;
   wire clk_wiz_0_locked;
   wire i2s_transmitter_0_lrclk_out;
   wire i2s_transmitter_0_sclk_out;
@@ -1537,6 +1536,7 @@ module system
   wire processing_system7_0_DDR_WE_N;
   wire processing_system7_0_FCLK_CLK0;
   wire processing_system7_0_FCLK_CLK1;
+  wire processing_system7_0_FCLK_CLK2;
   wire processing_system7_0_FCLK_RESET0_N;
   wire processing_system7_0_FIXED_IO_DDR_VRN;
   wire processing_system7_0_FIXED_IO_DDR_VRP;
@@ -1664,7 +1664,7 @@ module system
   assign aud_iic_sda_o = processing_system7_0_IIC_0_SDA_O;
   assign aud_iic_sda_t = processing_system7_0_IIC_0_SDA_T;
   assign aud_lrclk = i2s_transmitter_0_lrclk_out;
-  assign aud_mclk = clk_wiz_0_clk_out2;
+  assign aud_mclk = processing_system7_0_FCLK_CLK2;
   assign aud_sclk = i2s_transmitter_0_sclk_out;
   assign aud_sdata = i2s_transmitter_0_sdata_0_out;
   assign processing_system7_0_GPIO_0_TRI_I = EMIO_GPIO_0_tri_i[7:0];
@@ -1830,7 +1830,6 @@ module system
   system_clk_wiz_0_0 clk_wiz_0
        (.clk_in1(processing_system7_0_FCLK_CLK0),
         .clk_out1(clk_wiz_0_clk_out1),
-        .clk_out2(clk_wiz_0_clk_out2),
         .locked(clk_wiz_0_locked));
   system_i2s_transmitter_0_0 i2s_transmitter_0
        (.aud_mclk(clk_wiz_0_clk_out1),
@@ -1882,6 +1881,7 @@ module system
         .DDR_WEB(DDR_we_n),
         .FCLK_CLK0(processing_system7_0_FCLK_CLK0),
         .FCLK_CLK1(processing_system7_0_FCLK_CLK1),
+        .FCLK_CLK2(processing_system7_0_FCLK_CLK2),
         .FCLK_RESET0_N(processing_system7_0_FCLK_RESET0_N),
         .GPIO_I(processing_system7_0_GPIO_0_TRI_I),
         .GPIO_O(processing_system7_0_GPIO_0_TRI_O),

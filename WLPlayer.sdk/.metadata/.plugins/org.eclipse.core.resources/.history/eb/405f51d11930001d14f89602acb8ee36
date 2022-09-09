@@ -1,0 +1,15 @@
+#ifndef _INTERRUPT_
+#define _INTERRUPT_
+#include "defs.h"
+
+///////////////////////////////////macro//////////////////////////////
+#define INTC_DEV_ID XPAR_SCUGIC_SINGLE_DEVICE_ID
+
+//////////////////////////////////function////////////////////////////
+/**
+ * init the scugic and the exception handler
+ * @return 0:success 1:failed
+ */
+int IntcInitialize();
+
+#endif

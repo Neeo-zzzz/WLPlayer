@@ -16,4 +16,13 @@
 #include "sleep.h"
 #include "ff.h"
 
+//macro
+
+//memory layout
+#define DDR_BASE_ADDR XPAR_PS7_DDR_0_S_AXI_BASEADDR
+#define MEM_BASE_ADDR (DDR_BASE_ADDR+0x1000000)
+#define VIDEO_MEM_SIZE 0x2d00 //1024*600*3
+#define VIDEO_ADDR_OFFSET 0x00100000
+#define AUDIO_ADDR_OFFSET 0x00000000
+
 #endif

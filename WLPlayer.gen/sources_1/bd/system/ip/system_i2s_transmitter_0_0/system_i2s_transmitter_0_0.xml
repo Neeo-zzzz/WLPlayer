@@ -945,7 +945,7 @@
           <spirit:name>FREQ_HZ</spirit:name>
           <spirit:displayName>Audio clock frequency</spirit:displayName>
           <spirit:description>specify frequency of the clock connected to port this port</spirit:description>
-          <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="BUSIFPARAM_VALUE.AUD_MCLK.FREQ_HZ">18432971</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="BUSIFPARAM_VALUE.AUD_MCLK.FREQ_HZ">18431963</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>FREQ_TOLERANCE_HZ</spirit:name>
@@ -1052,7 +1052,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:476afacd</spirit:value>
+            <spirit:value>9:2dfba660</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1066,11 +1066,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Sep 08 05:42:53 UTC 2022</spirit:value>
+            <spirit:value>Fri Sep 09 12:06:29 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:476afacd</spirit:value>
+            <spirit:value>9:2dfba660</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1086,11 +1086,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Sep 08 05:42:53 UTC 2022</spirit:value>
+            <spirit:value>Fri Sep 09 12:06:29 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:476afacd</spirit:value>
+            <spirit:value>9:2dfba660</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1109,7 +1109,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:73585994</spirit:value>
+            <spirit:value>9:c9ad8c4c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1125,11 +1125,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Sep 08 05:42:53 UTC 2022</spirit:value>
+            <spirit:value>Fri Sep 09 12:06:29 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:73585994</spirit:value>
+            <spirit:value>9:c9ad8c4c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1144,11 +1144,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Sep 08 05:42:53 UTC 2022</spirit:value>
+            <spirit:value>Fri Sep 09 12:06:29 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:476afacd</spirit:value>
+            <spirit:value>9:2dfba660</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1162,11 +1162,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Sep 08 05:46:07 UTC 2022</spirit:value>
+            <spirit:value>Fri Sep 09 12:09:12 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:476afacd</spirit:value>
+            <spirit:value>9:2dfba660</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>

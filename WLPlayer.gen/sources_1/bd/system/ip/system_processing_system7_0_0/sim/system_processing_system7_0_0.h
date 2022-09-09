@@ -176,6 +176,7 @@ public:
   sc_core::sc_in< sc_dt::sc_bv<1> > IRQ_F2P;
   sc_core::sc_out< bool > FCLK_CLK0;
   sc_core::sc_out< bool > FCLK_CLK1;
+  sc_core::sc_out< bool > FCLK_CLK2;
   sc_core::sc_out< bool > FCLK_RESET0_N;
   sc_core::sc_out< sc_dt::sc_bv<54> > MIO;
   sc_core::sc_out< bool > DDR_CAS_n;
@@ -341,6 +342,7 @@ public:
   sc_core::sc_in< sc_dt::sc_bv<1> > IRQ_F2P;
   sc_core::sc_out< bool > FCLK_CLK0;
   sc_core::sc_out< bool > FCLK_CLK1;
+  sc_core::sc_out< bool > FCLK_CLK2;
   sc_core::sc_out< bool > FCLK_RESET0_N;
   sc_core::sc_inout< sc_dt::sc_bv<54> > MIO;
   sc_core::sc_inout< bool > DDR_CAS_n;
@@ -506,6 +508,7 @@ public:
   sc_core::sc_in< sc_dt::sc_bv<1> > IRQ_F2P;
   sc_core::sc_out< bool > FCLK_CLK0;
   sc_core::sc_out< bool > FCLK_CLK1;
+  sc_core::sc_out< bool > FCLK_CLK2;
   sc_core::sc_out< bool > FCLK_RESET0_N;
   sc_core::sc_out< sc_dt::sc_bv<54> > MIO;
   sc_core::sc_out< bool > DDR_CAS_n;
@@ -675,6 +678,7 @@ public:
   sc_core::sc_in< sc_dt::sc_bv<1> > IRQ_F2P;
   sc_core::sc_out< bool > FCLK_CLK0;
   sc_core::sc_out< bool > FCLK_CLK1;
+  sc_core::sc_out< bool > FCLK_CLK2;
   sc_core::sc_out< bool > FCLK_RESET0_N;
   sc_core::sc_out< sc_dt::sc_bv<54> > MIO;
   sc_core::sc_out< bool > DDR_CAS_n;
@@ -852,6 +856,7 @@ public:
   sc_core::sc_in< sc_dt::sc_bv<1> > IRQ_F2P;
   sc_core::sc_out< bool > FCLK_CLK0;
   sc_core::sc_out< bool > FCLK_CLK1;
+  sc_core::sc_out< bool > FCLK_CLK2;
   sc_core::sc_out< bool > FCLK_RESET0_N;
   sc_core::sc_out< sc_dt::sc_bv<54> > MIO;
   sc_core::sc_out< bool > DDR_CAS_n;

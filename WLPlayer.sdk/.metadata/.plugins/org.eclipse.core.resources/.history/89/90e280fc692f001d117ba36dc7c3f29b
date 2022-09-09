@@ -1,0 +1,8 @@
+#include "interrupt.h"
+
+XScuGic Intc;
+
+int IntcInitialize()
+{
+
+}

@@ -1,7 +1,7 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-// Date        : Thu Sep  8 13:46:33 2022
+// Date        : Fri Sep  9 20:09:26 2022
 // Host        : DESKTOP-TFS74FU running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ip/system_audio_formatter_0_0/system_audio_formatter_0_0_sim_netlist.v
@@ -76,7 +76,7 @@ module system_audio_formatter_0_0
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s_axi_lite RRESP" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME s_axi_lite, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 12, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 0, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) output [1:0]s_axi_lite_rresp;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 m_axis_mm2s_aclk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_axis_mm2s_aclk, ASSOCIATED_BUSIF m_axi_mm2s:m_axis_mm2s, ASSOCIATED_RESET m_axis_mm2s_aresetn, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input m_axis_mm2s_aclk;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 m_axis_mm2s_aresetn RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_axis_mm2s_aresetn, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input m_axis_mm2s_aresetn;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 aud_mclk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME aud_mclk, ASSOCIATED_RESET aud_mreset, FREQ_HZ 18432971, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0" *) input aud_mclk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 aud_mclk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME aud_mclk, ASSOCIATED_RESET aud_mreset, FREQ_HZ 18431963, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0" *) input aud_mclk;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 aud_mreset RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME aud_mreset, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *) input aud_mreset;
   (* X_INTERFACE_INFO = "xilinx.com:signal:interrupt:1.0 MM2S_INTROUT INTERRUPT" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME MM2S_INTROUT, SENSITIVITY LEVEL_HIGH, PortWidth 1" *) output irq_mm2s;
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m_axis_mm2s TVALID" *) output m_axis_mm2s_tvalid;

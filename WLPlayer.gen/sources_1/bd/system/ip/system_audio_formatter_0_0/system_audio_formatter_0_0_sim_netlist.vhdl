@@ -1,7 +1,7 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
--- Date        : Thu Sep  8 13:46:33 2022
+-- Date        : Fri Sep  9 20:09:26 2022
 -- Host        : DESKTOP-TFS74FU running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ip/system_audio_formatter_0_0/system_audio_formatter_0_0_sim_netlist.vhdl
@@ -35843,7 +35843,7 @@ architecture STRUCTURE of system_audio_formatter_0_0 is
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of aud_mclk : signal is "xilinx.com:signal:clock:1.0 aud_mclk CLK";
   attribute X_INTERFACE_PARAMETER : string;
-  attribute X_INTERFACE_PARAMETER of aud_mclk : signal is "XIL_INTERFACENAME aud_mclk, ASSOCIATED_RESET aud_mreset, FREQ_HZ 18432971, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of aud_mclk : signal is "XIL_INTERFACENAME aud_mclk, ASSOCIATED_RESET aud_mreset, FREQ_HZ 18431963, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of aud_mreset : signal is "xilinx.com:signal:reset:1.0 aud_mreset RST";
   attribute X_INTERFACE_PARAMETER of aud_mreset : signal is "XIL_INTERFACENAME aud_mreset, POLARITY ACTIVE_HIGH, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of irq_mm2s : signal is "xilinx.com:signal:interrupt:1.0 MM2S_INTROUT INTERRUPT";

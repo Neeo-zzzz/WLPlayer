@@ -1,0 +1,9 @@
+#include "defs.h"
+#include "interrupt.h"
+#include "audio.h"
+
+int main()
+{
+	int IntcInitialize();
+	int AudioInitialize();
+}

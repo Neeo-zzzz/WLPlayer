@@ -143,7 +143,7 @@ input wire m_axis_mm2s_aclk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_axis_mm2s_aresetn, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 m_axis_mm2s_aresetn RST" *)
 input wire m_axis_mm2s_aresetn;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME aud_mclk, ASSOCIATED_RESET aud_mreset, FREQ_HZ 18432971, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME aud_mclk, ASSOCIATED_RESET aud_mreset, FREQ_HZ 18431963, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 aud_mclk CLK" *)
 input wire aud_mclk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME aud_mreset, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *)
