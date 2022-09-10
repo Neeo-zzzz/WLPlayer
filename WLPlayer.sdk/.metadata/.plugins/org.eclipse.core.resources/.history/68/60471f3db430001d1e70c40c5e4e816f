@@ -1,0 +1,18 @@
+#include "defs.h"
+#include "audio.h"
+
+
+int main()
+{
+	AudioInitialize();
+	PlayMusic("land_s.wav");
+	while(1)
+	{
+		if(Music_Read_Permition)
+		{
+			Music_Read_Permition = 0;
+			ReadWavMusic(Music_Play_Now,1);
+			printf("new write\n");
+		}
+	}
+}

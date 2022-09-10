@@ -1,0 +1,11 @@
+#include "defs.h"
+#include "audio.h"
+
+extern u8 Music_Read_Permition;
+
+int main()
+{
+	AudioInitialize();
+	PlayMusic("land_s.wav");
+	while()
+}

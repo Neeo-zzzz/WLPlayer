@@ -80,9 +80,9 @@ public:
 
   // module pin-to-pin RTL interface
 
-  sc_core::sc_in< sc_dt::sc_bv<8> > GPIO_I;
-  sc_core::sc_out< sc_dt::sc_bv<8> > GPIO_O;
-  sc_core::sc_out< sc_dt::sc_bv<8> > GPIO_T;
+  sc_core::sc_in< sc_dt::sc_bv<10> > GPIO_I;
+  sc_core::sc_out< sc_dt::sc_bv<10> > GPIO_O;
+  sc_core::sc_out< sc_dt::sc_bv<10> > GPIO_T;
   sc_core::sc_in< bool > I2C0_SDA_I;
   sc_core::sc_out< bool > I2C0_SDA_O;
   sc_core::sc_out< bool > I2C0_SDA_T;
@@ -246,9 +246,9 @@ public:
 
   // module pin-to-pin RTL interface
 
-  sc_core::sc_in< sc_dt::sc_bv<8> > GPIO_I;
-  sc_core::sc_out< sc_dt::sc_bv<8> > GPIO_O;
-  sc_core::sc_out< sc_dt::sc_bv<8> > GPIO_T;
+  sc_core::sc_in< sc_dt::sc_bv<10> > GPIO_I;
+  sc_core::sc_out< sc_dt::sc_bv<10> > GPIO_O;
+  sc_core::sc_out< sc_dt::sc_bv<10> > GPIO_T;
   sc_core::sc_in< bool > I2C0_SDA_I;
   sc_core::sc_out< bool > I2C0_SDA_O;
   sc_core::sc_out< bool > I2C0_SDA_T;
@@ -412,9 +412,9 @@ public:
 
   // module pin-to-pin RTL interface
 
-  sc_core::sc_in< sc_dt::sc_bv<8> > GPIO_I;
-  sc_core::sc_out< sc_dt::sc_bv<8> > GPIO_O;
-  sc_core::sc_out< sc_dt::sc_bv<8> > GPIO_T;
+  sc_core::sc_in< sc_dt::sc_bv<10> > GPIO_I;
+  sc_core::sc_out< sc_dt::sc_bv<10> > GPIO_O;
+  sc_core::sc_out< sc_dt::sc_bv<10> > GPIO_T;
   sc_core::sc_in< bool > I2C0_SDA_I;
   sc_core::sc_out< bool > I2C0_SDA_O;
   sc_core::sc_out< bool > I2C0_SDA_T;
@@ -582,9 +582,9 @@ public:
 
   // module pin-to-pin RTL interface
 
-  sc_core::sc_in< sc_dt::sc_bv<8> > GPIO_I;
-  sc_core::sc_out< sc_dt::sc_bv<8> > GPIO_O;
-  sc_core::sc_out< sc_dt::sc_bv<8> > GPIO_T;
+  sc_core::sc_in< sc_dt::sc_bv<10> > GPIO_I;
+  sc_core::sc_out< sc_dt::sc_bv<10> > GPIO_O;
+  sc_core::sc_out< sc_dt::sc_bv<10> > GPIO_T;
   sc_core::sc_in< bool > I2C0_SDA_I;
   sc_core::sc_out< bool > I2C0_SDA_O;
   sc_core::sc_out< bool > I2C0_SDA_T;
@@ -760,9 +760,9 @@ public:
 
   // module pin-to-pin RTL interface
 
-  sc_core::sc_in< sc_dt::sc_bv<8> > GPIO_I;
-  sc_core::sc_out< sc_dt::sc_bv<8> > GPIO_O;
-  sc_core::sc_out< sc_dt::sc_bv<8> > GPIO_T;
+  sc_core::sc_in< sc_dt::sc_bv<10> > GPIO_I;
+  sc_core::sc_out< sc_dt::sc_bv<10> > GPIO_O;
+  sc_core::sc_out< sc_dt::sc_bv<10> > GPIO_T;
   sc_core::sc_in< bool > I2C0_SDA_I;
   sc_core::sc_out< bool > I2C0_SDA_O;
   sc_core::sc_out< bool > I2C0_SDA_T;

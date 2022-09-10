@@ -1,37 +1,24 @@
 Nothing to build in platform 'WLPlayer_system'
 
-22:41:23 **** Incremental Build of configuration Debug for project WLPlayer_Software ****
+16:59:47 **** Incremental Build of configuration Debug for project WLPlayer_Software ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
 ' '
 make --no-print-directory main-build
-'Building file: ../src/audio.c'
-'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/audio.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/audio.d" -MT"src/audio.o" -o "src/audio.o" "../src/audio.c"
-../src/audio.c: In function 'PlayMusic':
-../src/audio.c:289:1: warning: control reaches end of non-void function [-Wreturn-type]
-  289 | }
-      | ^
-'Finished building: ../src/audio.c'
-' '
 'Building file: ../src/main.c'
 'Invoking: ARM v7 gcc compiler'
 arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-In file included from ../src/main.c:2:
-../src/audio.h:125:13: warning: 'AdmaIOCHandler' declared 'static' but never defined [-Wunused-function]
-  125 | static void AdmaIOCHandler(void* callback);
-      |             ^~~~~~~~~~~~~~
 'Finished building: ../src/main.c'
 ' '
 'Building target: WLPlayer_Software.elf'
 'Invoking: ARM v7 gcc linker'
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LD:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/bsplib/lib -o "WLPlayer_Software.elf"  ./src/audio.o ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LD:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/bsplib/lib -o "WLPlayer_Software.elf"  ./src/audio.o ./src/main.o ./src/video.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group
 'Finished building target: WLPlayer_Software.elf'
 ' '
 'Invoking: ARM v7 Print Size'
 arm-none-eabi-size WLPlayer_Software.elf  |tee "WLPlayer_Software.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 164128	   3436	  28480	 196044	  2fdcc	WLPlayer_Software.elf
+ 173908	   3596	  31136	 208640	  32f00	WLPlayer_Software.elf
 'Finished building: WLPlayer_Software.elf.size'
 ' '

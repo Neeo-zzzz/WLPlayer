@@ -1,0 +1,26 @@
+#include "defs.h"
+#include "audio.h"
+#include "video.h"
+
+
+int main()
+{
+	//AudioInitialize();
+	//PlayMusic("land_s.wav");
+
+	VideoInitialize();
+	pixel black = {0x00,0x00,0x00};
+	pixel red = {0xFF,0x00,0x00};
+	PaintRectangular(0,0,1023,599,&black);
+	while(1)
+	{
+		//main transaction loop
+//		if(Music_Read_Permition)
+//		{
+//			Music_Read_Permition = 0;
+//			ReadWavMusic(Music_Play_Now,1);
+//		}
+	}
+}
+
+

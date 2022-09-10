@@ -17,10 +17,11 @@ XAudioFormatterHwParams Audio_Hw_Params = {AUDIO_BUFFER_BASE,2,BIT_DEPTH_24,AUDI
 u8* Music_Buf = (u8*)AUDIO_BUFFER_BASE;
 
 music* Music_Play_Now; //the music playing now
+u8 Music_Read_Permition; // tell to read new data in, only modified by audio interrupt and read function
 
-u32 music_len;
-int intr_times;
-u64 music_buf_addr;
+//u32 music_len;
+//int intr_times;
+//u64 music_buf_addr;
 
 //////////////////////////////function//////////////////////////////////////
 
@@ -42,6 +43,7 @@ int AudioInitialize()
 	ConfigADAU1761();
 
 	Music_Play_Now = NULL;
+	Music_Read_Permition = 0;
 	return 0;
 }
 
@@ -78,26 +80,41 @@ int IntcInitialize()
 	return 0;
 }
 
-static void AdmaIOCHandler(void* callback)
+void AdmaIOCHandler(void* callback)
 {
 	XAudioFormatter* adma = (XAudioFormatter*)callback;
 	adma->ChannelId = XAudioFormatter_MM2S;
-	//printf("get intr! \n");
-	//todo
-	intr_times += 1;
-	if(intr_times == AUDIO_PERIOD)
+
+	Music_Play_Now->intr_times += 1;
+	Music_Play_Now->now_position += AUDIO_BYTES_PER_PERIOD/4*3;
+
+	if(!Music_Play_Now->is_playing)
 	{
-		intr_times = 0;
-		music_len -= AUDIO_PERIOD*AUDIO_BYTES_PER_PERIOD;
-		if(music_len<=AUDIO_PERIOD*AUDIO_BYTES_PER_PERIOD)
+		printf("stop the music \n");
+		XAudioFormatterDMAStop(&Audio_Adma);
+		return;
+	}
+
+	if(Music_Play_Now->now_position>=Music_Play_Now->length)
+	{
+		printf("music end! \n");
+		Music_Play_Now->is_playing = 0;
+		XAudioFormatterDMAStop(&Audio_Adma);
+		return;
+	}
+
+	if(Music_Play_Now->intr_times == AUDIO_PERIOD)
+	{
+		Music_Play_Now->intr_times = 0;
+	}else if(Music_Play_Now->intr_times == AUDIO_PERIOD/2)
+	{
+		//set the new buf addr
+		Music_Play_Now->current_play_number += 1;
+		if(Music_Play_Now->current_play_number>=3)
 		{
-			printf("end\n");
-			XAudioFormatterDMAStop(&Audio_Adma);
+			Music_Play_Now->current_play_number = 0;
 		}
-	}else if(intr_times == AUDIO_PERIOD/2)
-	{
-		//set the next part addr
-		music_buf_addr += AUDIO_PERIOD*AUDIO_BYTES_PER_PERIOD;
+		u64 music_buf_addr = AUDIO_BUFFER_BASE + Music_Play_Now->current_play_number*AUDIO_PERIOD*AUDIO_BYTES_PER_PERIOD;
 		u32 offset = XAUD_FORMATTER_MM2S_OFFSET;
 		XAudioFormatter_WriteReg(Audio_Adma.BaseAddress,
 			XAUD_FORMATTER_BUFF_ADDR_LSB + offset,
@@ -105,8 +122,12 @@ static void AdmaIOCHandler(void* callback)
 		XAudioFormatter_WriteReg(Audio_Adma.BaseAddress,
 			XAUD_FORMATTER_BUFF_ADDR_MSB + offset,
 			(u32) (music_buf_addr >> 32));
+		//tell to read new data in
+		Music_Read_Permition = 1;
+#ifdef _AUDIO_DEBUG_
+		printf("read current addr %d\n",(int)Music_Play_Now->current_play_number);
+#endif
 	}
-	return;
 }
 
 void IICInitialize()
@@ -244,48 +265,13 @@ int PlayMusic(char* name)
 	//start the DMA
 
 	//first read the data to buffer
+	ReadWavMusic(Music_Play_Now,2);
 
 	//second reset the DMA and start
+	Music_Play_Now->is_playing = 1;
+	XAudioFormatterDMAStart(&Audio_Adma);
 
-
-//	printf("start \n");
-//
-//	UINT count;
-//	FIL file;
-//	f_open(&file,"land_s.wav",FA_READ);
-//	f_lseek(&file,0x110-4); //wave:0x62 + 4 land:0x110 star: 0xc2+4
-//	f_read(&file,Music_Buf,4,&count);
-//	Xil_DCacheFlush();
-//	u32 len_f =*((u32*)Music_Buf);
-//	printf("length: %d\n",(int)len_f);
-//	u8* buf_addr = Music_Buf;
-//	music_buf_addr = AUDIO_BUFFER_BASE;
-//	u32 file_len = 0;
-//	int temp_i = 0;
-//	u8 temp_buf;
-//	music_len = 0;
-//	intr_times = 0;
-//	while(file_len<=len_f)
-//	{
-//		f_read(&file,&buf_addr[temp_i],3,&count);
-//		if(count<3) break;
-//
-//		buf_addr[temp_i+3] = 0;
-//		temp_buf = buf_addr[temp_i+1] & 0x03;
-//		buf_addr[temp_i+2] = (buf_addr[temp_i+2]>>2)|(temp_buf<<6);
-//		temp_buf = buf_addr[temp_i] & 0x03;
-//		buf_addr[temp_i+1] = (buf_addr[temp_i+1]>>2)|(temp_buf<<6);
-//		buf_addr[temp_i] = buf_addr[temp_i]>>2;
-//
-//		music_len += 4;
-//		file_len += 3;
-//		temp_i += 4;
-//	}
-//	printf("write finish! \n");
-//	Xil_DCacheFlush();
-//	printf("start transfer \n");
-//	XAudioFormatterDMAStart(&Audio_Adma);
-//	while(1);
+	return 0;
 }
 
 music* AllocMusic(char* name)
@@ -303,6 +289,9 @@ music* AllocMusic(char* name)
 	result->is_playing = 0;
 	result->buf_position = (u8*) AUDIO_BUFFER_BASE;
 	result->file = music_file;
+	result->current_buf_number = 0;
+	result->intr_times = 0;
+	result->current_play_number = 0;
 	if (AnalyseWavFile(result,&(result->file))<0)
 	{
 		return NULL;
@@ -334,15 +323,27 @@ int AnalyseWavFile(music* mp,FIL* file)
 		printf("%s format check failed!",mp->name);
 		return -1;
 	}
-	//read the format block size
+	//read the format block size and jump until we arrive the data block
+	u32 read_header = 0x0C+4;
 	u32 format_size;
-	f_read(file,&format_size,4,&count);
-	f_lseek(file,format_size + 0x0C+8+4);
+	f_read(file,&format_size,4,&count); //read size
+	read_header += 4+format_size;
+	f_lseek(file,read_header); //switch to next block
+	f_read(file,temp_buf,4,&count); //read next block name
+	read_header += 4;
+	while(temp_buf[0] != 0x64 || temp_buf[1] != 0x61 || temp_buf[2] != 0x74 || temp_buf[3] != 0x61)
+	{
+		f_read(file,&format_size,4,&count); //read size
+		read_header += 4 + format_size;
+		f_lseek(file,read_header); //switch to next block
+		f_read(file,temp_buf,4,&count); //read block name
+		read_header += 4;
+	}
 
 	//arrive the data block
 	u32 len;
 	f_read(file,&len,4,&count);
-#ifdef _AUDIO_DEBUG
+#ifdef _AUDIO_DEBUG_
 	printf("file %s len: %d\n",mp->name,(int)len);
 #endif
 	mp->length = len;
@@ -354,10 +355,54 @@ void StopMusic()
 	if(Music_Play_Now==NULL) return;
 	if(Music_Play_Now->is_playing)
 	{
-		XAudioFormatterDMAStop(&Audio_Adma);
+		//will stop in the interrupt
 		Music_Play_Now->is_playing = 0;
 	}else
 	{
 		return;
 	}
+}
+
+void ContinueMusic()
+{
+	if(Music_Play_Now==NULL) return;
+	Music_Play_Now->is_playing = 1;
+	XAudioFormatterDMAStart(&Audio_Adma);
+}
+
+void ReadWavMusic(music* mp,int buf_num)
+{
+	if(buf_num>=3) return;
+	for(int i = 0;i<buf_num;i++)
+	{
+		u8* buf_addr = mp->buf_position;
+		mp->current_buf_number += 1;
+		if(mp->current_buf_number>=3)
+		{
+			mp->current_buf_number = 0;
+			mp->buf_position = Music_Buf;
+		}else
+		{
+			mp->buf_position += AUDIO_PERIOD*AUDIO_BYTES_PER_PERIOD;
+		}
+		//read the data
+		UINT count;
+		u8 temp_buf;
+		for(int j = 0;j<AUDIO_PERIOD*AUDIO_BYTES_PER_PERIOD;j+=4)
+		{
+			f_read(&mp->file,&buf_addr[j],3,&count);
+			if(count<3) return;
+
+			//because the bad performance of I2S transmitter, it can only transfer 20bit
+			//so I set the ADAU work in right-justify and shift 2 bit of the data.
+			buf_addr[j+3] = 0;
+			temp_buf = buf_addr[j+1] & 0x03;
+			buf_addr[j+2] = (buf_addr[j+2]>>2)|(temp_buf<<6);
+			temp_buf = buf_addr[j] & 0x03;
+			buf_addr[j+1] = (buf_addr[j+1]>>2)|(temp_buf<<6);
+			buf_addr[j] = buf_addr[j]>>2;
+		}
+	}
+	Xil_DCacheFlush();
+	return;
 }

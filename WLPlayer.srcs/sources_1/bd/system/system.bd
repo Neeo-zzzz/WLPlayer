@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x2C76F6EF2837CF1F",
+      "boundary_crc": "0xB6AF18011DC1B416",
       "device": "xc7z020clg484-1",
       "gen_directory": "../../../../WLPlayer.gen/sources_1/bd/system",
       "name": "system",
@@ -312,10 +312,10 @@
             "value": "1"
           },
           "PCW_GPIO_EMIO_GPIO_IO": {
-            "value": "8"
+            "value": "10"
           },
           "PCW_GPIO_EMIO_GPIO_WIDTH": {
-            "value": "8"
+            "value": "10"
           },
           "PCW_I2C0_I2C0_IO": {
             "value": "EMIO"

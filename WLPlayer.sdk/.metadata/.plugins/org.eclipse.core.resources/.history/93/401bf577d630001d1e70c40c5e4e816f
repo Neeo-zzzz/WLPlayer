@@ -1,0 +1,72 @@
+#include "video.h"
+
+XAxiVdma Video_Vdma;
+XAxiVdma_Config* Video_Vdma_Config;
+XAxiVdma_DmaSetup Video_Vdma_Read_Cfg;
+
+
+void VideoInitialize()
+{
+	int status;
+	Video_Vdma_Config = XAxiVdma_LookupConfig(VIDEO_VDMA_DEV_ID);
+	status = XAxiVdma_CfgInitialize(&Video_Vdma,Video_Vdma_Config,Video_Vdma_Config->BaseAddress);
+	if(status != XST_SUCCESS)
+	{
+		printf("configuration vdma initialization failed %d \n",status);
+	}
+
+	Video_Vdma_Read_Cfg.VertSizeInput = VIDEO_HEIGHT;
+	Video_Vdma_Read_Cfg.HoriSizeInput = VIDEO_WIDTH * (Video_Vdma_Config->Mm2SStreamWidth>>3);
+	Video_Vdma_Read_Cfg.Stride = VIDEO_WIDTH * (Video_Vdma_Config->Mm2SStreamWidth>>3);
+	Video_Vdma_Read_Cfg.FrameDelay = 0;
+	Video_Vdma_Read_Cfg.EnableCircularBuf = 1;
+	Video_Vdma_Read_Cfg.EnableSync = 1;
+	Video_Vdma_Read_Cfg.PointNum = 0;
+	Video_Vdma_Read_Cfg.EnableFrameCounter = 0;
+	Video_Vdma_Read_Cfg.FixedFrameStoreAddr = 0;
+	XAxiVdma_DmaConfig(&Video_Vdma,XAXIVDMA_READ,&Video_Vdma_Read_Cfg);
+
+	u32 addr =  XPAR_AXI_VDMA_0_DEVICE_ID;
+	for(int i = 0;i<Video_Vdma.MaxNumFrames;i++)
+	{
+		Video_Vdma_Read_Cfg.FrameStoreStartAddr[i] = addr;
+		addr += VIDEO_WIDTH * VIDEO_HEIGHT;
+	}
+	status = XAxiVdma_DmaSetBufferAddr(&Video_Vdma,XAXIVDMA_READ,Video_Vdma_Read_Cfg.FrameStoreStartAddr);
+	if(status != XST_SUCCESS)
+	{
+		printf("read channel set buffer address failed! error = %d \n",status);
+	}
+	XAxiVdma_DmaStart(&Video_Vdma,XAXIVDMA_READ);
+	return;
+}
+
+void ColorBarTest()
+{
+	u8* vdma_ptr = (u8*)VIDEO_BUFFER_BASE;
+	//write the ddr
+	for(int i = 0;i<VIDEO_HEIGHT;i++)
+	{
+		for(int j = 0;j<VIDEO_WIDTH;j++)
+		{
+			if(i<VIDEO_HEIGHT/3)
+			{
+				*(vdma_ptr + i*VIDEO_WIDTH*3 + j*3 + 0) = 0xff;
+				*(vdma_ptr + i*VIDEO_WIDTH*3 + j*3 + 1) = 0x00;
+				*(vdma_ptr + i*VIDEO_WIDTH*3 + j*3 + 2) = 0x00;
+			}else if(i>VIDEO_HEIGHT*2/3)
+			{
+				*(vdma_ptr + i*VIDEO_WIDTH*3 + j*3 + 0) = 0x00;
+				*(vdma_ptr + i*VIDEO_WIDTH*3 + j*3 + 1) = 0x00;
+				*(vdma_ptr + i*VIDEO_WIDTH*3 + j*3 + 2) = 0xff;
+			}else
+			{
+				*(vdma_ptr + i*VIDEO_WIDTH*3 + j*3 + 0) = 0x00;
+				*(vdma_ptr + i*VIDEO_WIDTH*3 + j*3 + 1) = 0xff;
+				*(vdma_ptr + i*VIDEO_WIDTH*3 + j*3 + 2) = 0x00;
+			}
+		}
+	}
+
+	Xil_DCacheFlush();
+}

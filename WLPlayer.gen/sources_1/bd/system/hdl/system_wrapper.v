@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-//Date        : Fri Sep  9 20:06:04 2022
+//Date        : Sat Sep 10 15:28:48 2022
 //Host        : DESKTOP-TFS74FU running 64-bit major release  (build 9200)
 //Command     : generate_target system_wrapper.bd
 //Design      : system_wrapper
@@ -57,7 +57,7 @@ module system_wrapper
   inout DDR_ras_n;
   inout DDR_reset_n;
   inout DDR_we_n;
-  inout [7:0]EMIO_GPIO_0_tri_io;
+  inout [9:0]EMIO_GPIO_0_tri_io;
   inout FIXED_IO_ddr_vrn;
   inout FIXED_IO_ddr_vrp;
   inout [53:0]FIXED_IO_mio;
@@ -98,6 +98,8 @@ module system_wrapper
   wire [5:5]EMIO_GPIO_0_tri_i_5;
   wire [6:6]EMIO_GPIO_0_tri_i_6;
   wire [7:7]EMIO_GPIO_0_tri_i_7;
+  wire [8:8]EMIO_GPIO_0_tri_i_8;
+  wire [9:9]EMIO_GPIO_0_tri_i_9;
   wire [0:0]EMIO_GPIO_0_tri_io_0;
   wire [1:1]EMIO_GPIO_0_tri_io_1;
   wire [2:2]EMIO_GPIO_0_tri_io_2;
@@ -106,6 +108,8 @@ module system_wrapper
   wire [5:5]EMIO_GPIO_0_tri_io_5;
   wire [6:6]EMIO_GPIO_0_tri_io_6;
   wire [7:7]EMIO_GPIO_0_tri_io_7;
+  wire [8:8]EMIO_GPIO_0_tri_io_8;
+  wire [9:9]EMIO_GPIO_0_tri_io_9;
   wire [0:0]EMIO_GPIO_0_tri_o_0;
   wire [1:1]EMIO_GPIO_0_tri_o_1;
   wire [2:2]EMIO_GPIO_0_tri_o_2;
@@ -114,6 +118,8 @@ module system_wrapper
   wire [5:5]EMIO_GPIO_0_tri_o_5;
   wire [6:6]EMIO_GPIO_0_tri_o_6;
   wire [7:7]EMIO_GPIO_0_tri_o_7;
+  wire [8:8]EMIO_GPIO_0_tri_o_8;
+  wire [9:9]EMIO_GPIO_0_tri_o_9;
   wire [0:0]EMIO_GPIO_0_tri_t_0;
   wire [1:1]EMIO_GPIO_0_tri_t_1;
   wire [2:2]EMIO_GPIO_0_tri_t_2;
@@ -122,6 +128,8 @@ module system_wrapper
   wire [5:5]EMIO_GPIO_0_tri_t_5;
   wire [6:6]EMIO_GPIO_0_tri_t_6;
   wire [7:7]EMIO_GPIO_0_tri_t_7;
+  wire [8:8]EMIO_GPIO_0_tri_t_8;
+  wire [9:9]EMIO_GPIO_0_tri_t_9;
   wire FIXED_IO_ddr_vrn;
   wire FIXED_IO_ddr_vrp;
   wire [53:0]FIXED_IO_mio;
@@ -185,6 +193,16 @@ module system_wrapper
         .IO(EMIO_GPIO_0_tri_io[7]),
         .O(EMIO_GPIO_0_tri_i_7),
         .T(EMIO_GPIO_0_tri_t_7));
+  IOBUF EMIO_GPIO_0_tri_iobuf_8
+       (.I(EMIO_GPIO_0_tri_o_8),
+        .IO(EMIO_GPIO_0_tri_io[8]),
+        .O(EMIO_GPIO_0_tri_i_8),
+        .T(EMIO_GPIO_0_tri_t_8));
+  IOBUF EMIO_GPIO_0_tri_iobuf_9
+       (.I(EMIO_GPIO_0_tri_o_9),
+        .IO(EMIO_GPIO_0_tri_io[9]),
+        .O(EMIO_GPIO_0_tri_i_9),
+        .T(EMIO_GPIO_0_tri_t_9));
   IOBUF aud_iic_scl_iobuf
        (.I(aud_iic_scl_o),
         .IO(aud_iic_scl_io),
@@ -211,9 +229,9 @@ module system_wrapper
         .DDR_ras_n(DDR_ras_n),
         .DDR_reset_n(DDR_reset_n),
         .DDR_we_n(DDR_we_n),
-        .EMIO_GPIO_0_tri_i({EMIO_GPIO_0_tri_i_7,EMIO_GPIO_0_tri_i_6,EMIO_GPIO_0_tri_i_5,EMIO_GPIO_0_tri_i_4,EMIO_GPIO_0_tri_i_3,EMIO_GPIO_0_tri_i_2,EMIO_GPIO_0_tri_i_1,EMIO_GPIO_0_tri_i_0}),
-        .EMIO_GPIO_0_tri_o({EMIO_GPIO_0_tri_o_7,EMIO_GPIO_0_tri_o_6,EMIO_GPIO_0_tri_o_5,EMIO_GPIO_0_tri_o_4,EMIO_GPIO_0_tri_o_3,EMIO_GPIO_0_tri_o_2,EMIO_GPIO_0_tri_o_1,EMIO_GPIO_0_tri_o_0}),
-        .EMIO_GPIO_0_tri_t({EMIO_GPIO_0_tri_t_7,EMIO_GPIO_0_tri_t_6,EMIO_GPIO_0_tri_t_5,EMIO_GPIO_0_tri_t_4,EMIO_GPIO_0_tri_t_3,EMIO_GPIO_0_tri_t_2,EMIO_GPIO_0_tri_t_1,EMIO_GPIO_0_tri_t_0}),
+        .EMIO_GPIO_0_tri_i({EMIO_GPIO_0_tri_i_9,EMIO_GPIO_0_tri_i_8,EMIO_GPIO_0_tri_i_7,EMIO_GPIO_0_tri_i_6,EMIO_GPIO_0_tri_i_5,EMIO_GPIO_0_tri_i_4,EMIO_GPIO_0_tri_i_3,EMIO_GPIO_0_tri_i_2,EMIO_GPIO_0_tri_i_1,EMIO_GPIO_0_tri_i_0}),
+        .EMIO_GPIO_0_tri_o({EMIO_GPIO_0_tri_o_9,EMIO_GPIO_0_tri_o_8,EMIO_GPIO_0_tri_o_7,EMIO_GPIO_0_tri_o_6,EMIO_GPIO_0_tri_o_5,EMIO_GPIO_0_tri_o_4,EMIO_GPIO_0_tri_o_3,EMIO_GPIO_0_tri_o_2,EMIO_GPIO_0_tri_o_1,EMIO_GPIO_0_tri_o_0}),
+        .EMIO_GPIO_0_tri_t({EMIO_GPIO_0_tri_t_9,EMIO_GPIO_0_tri_t_8,EMIO_GPIO_0_tri_t_7,EMIO_GPIO_0_tri_t_6,EMIO_GPIO_0_tri_t_5,EMIO_GPIO_0_tri_t_4,EMIO_GPIO_0_tri_t_3,EMIO_GPIO_0_tri_t_2,EMIO_GPIO_0_tri_t_1,EMIO_GPIO_0_tri_t_0}),
         .FIXED_IO_ddr_vrn(FIXED_IO_ddr_vrn),
         .FIXED_IO_ddr_vrp(FIXED_IO_ddr_vrp),
         .FIXED_IO_mio(FIXED_IO_mio),

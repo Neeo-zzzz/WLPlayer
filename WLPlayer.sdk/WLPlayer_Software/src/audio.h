@@ -25,7 +25,27 @@
 #define AUDIO_PERIOD 8
 #define AUDIO_BYTES_PER_PERIOD 1024 //a ratio of 32*2
 
-#define _AUDIO_DEBUG
+#define _AUDIO_DEBUG_
+
+/////////////////////////////struct////////////////////////////////////
+
+#define MUSIC_NAME_LENGTH 20
+typedef struct _music
+{
+	char name[MUSIC_NAME_LENGTH]; //the music file name
+	u32 length; //the music data length in bytes
+
+	u32 now_position; //now playing position in bytes
+	u8 intr_times; //record of the times of interrupt
+	u8 current_play_number; //now playing data buf block number
+
+	u8 is_playing; //is playing(1) or stop(0)
+
+	u8* buf_position; //the current play period's data pointer
+	u8 current_buf_number; //indicate the next write buf count: 0, 1, 2
+	FIL file; //the file descriptor
+
+} music;
 
 //////////////////////////////global variable//////////////////////////////
 //ADAU1761
@@ -84,18 +104,9 @@ enum audio_regs {
 	R66_CLOCK_ENABLE_1 								= 0xFA
 };
 
-/////////////////////////////struct////////////////////////////////////
+extern u8 Music_Read_Permition;
+extern music* Music_Play_Now;
 
-#define MUSIC_NAME_LENGTH 20
-typedef struct _music
-{
-	char name[MUSIC_NAME_LENGTH]; //the music file name
-	u32 length; //the music data length in bytes
-	u32 now_position; //now playing position in bytes
-	u8 is_playing; //is playing(1) or stop(0)
-	u8* buf_position; //the current play period's data pointer
-	FIL file; //the file descriptor
-} music;
 
 /////////////////////////////function//////////////////////////////////
 
@@ -122,7 +133,7 @@ void AdmaInitialize();
 /**
  * The interrupt of finish one period of audio data convert will call this function
  */
-static void AdmaIOCHandler(void* callback);
+void AdmaIOCHandler(void* callback);
 
 /**
  * init the IIC controler
@@ -210,5 +221,23 @@ int AnalyseWavFile(music* mp,FIL* file);
  * This function will stop the current play music.
  */
 void StopMusic();
+
+/**
+ * To implement lazy copy, the DMA address is switched between three data buffer,
+ * When PERIOD/2 interrupt count get, we set the address to the next buf and start
+ * copy the data to the third buf.
+ */
+
+/**
+ * continue the music which is stoped in last.
+ */
+void ContinueMusic();
+
+/**
+ * Read the data into buffer in size: buf_num*PERIOD*BYTES_PER_PERIOD.
+ * @param mp the current playing music
+ * @param size to read, not large then 3
+ */
+void ReadWavMusic(music* mp,int buf_num);
 
 #endif

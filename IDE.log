@@ -1,0 +1,12 @@
+08:12:10 INFO  : Registering command handlers for Vitis TCF services
+08:12:10 INFO  : Launching XSCT server: xsct.bat -n  -interactive D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\temp_xsdb_launch_script.tcl
+08:12:10 INFO  : Launching XSCT server: xsct.bat -n  -interactive D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\temp_xsdb_launch_script.tcl
+08:12:10 INFO  : Platform repository initialization has completed.
+08:12:14 INFO  : XSCT server has started successfully.
+08:12:14 INFO  : XSCT server has started successfully.
+08:12:14 INFO  : Successfully done setting XSCT server connection channel  
+08:12:14 INFO  : plnx-install-location is set to ''
+08:12:14 INFO  : Successfully done setting XSCT server connection channel  
+08:12:17 INFO  : Successfully done setting workspace for the tool. 
+08:12:17 INFO  : Successfully done setting workspace for the tool. 
+08:12:17 INFO  : Successfully done query RDI_DATADIR 
