@@ -1,0 +1,10 @@
+#include "gpio.h"
+
+XGpioPs Gpio;
+XGpioPs_Config* Gpio_Config;
+
+void GPIOInitialize()
+{
+	Gpio_Config = XGpioPs_LookupConfig(GPIOPS_DEV_ID);
+	XGpioPs_Cfginitialize(&Gpio,Gpio_Config,Gpio_Config->BaseAddr);
+}

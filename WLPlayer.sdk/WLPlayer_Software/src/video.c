@@ -9,13 +9,34 @@ pixel Color_Yellow = {0xFF,0xFF,0x00};
 pixel Color_Cyan = {0x00,0xFF,0xFF};
 pixel Color_Purple = {0x8B,0x00,0xFF};
 pixel Color_Black = {0x00,0x00,0x00};
-pixel Color_Write = {0xFF,0xFF,0xFF};
+pixel Color_White = {0xFF,0xFF,0xFF};
 
 XAxiVdma Video_Vdma;
 XAxiVdma_Config* Video_Vdma_Config;
 XAxiVdma_DmaSetup Video_Vdma_Read_Cfg;
 
 pixel* Screen;
+queue_header Wave_Queue; //the current wave picture queue pointer
+pixel Wave_Color;
+
+//character
+u8 Character_V[CHARACTER_WIDTH*CHARACTER_HEIGHT] = {
+	1,0,0,0,0,0,0,0,0,1,
+	1,0,0,0,0,0,0,0,0,1,
+	0,1,0,0,0,0,0,0,1,0,
+	0,1,0,0,0,0,0,0,1,0,
+	0,1,0,0,0,0,0,0,1,0,
+	0,1,0,0,0,0,0,0,1,0,
+	0,0,1,0,0,0,0,1,0,0,
+	0,0,1,0,0,0,0,1,0,0,
+	0,0,1,0,0,0,0,1,0,0,
+	0,0,1,0,0,0,0,1,0,0,
+	0,0,0,1,0,0,1,0,0,0,
+	0,0,0,1,0,0,1,0,0,0,
+	0,0,0,1,0,0,1,0,0,0,
+	0,0,0,0,1,1,0,0,0,0,
+	0,0,0,0,1,1,0,0,0,0
+};
 
 
 void VideoInitialize()
@@ -58,6 +79,7 @@ void VideoInitialize()
 	{
 		printf("start vdma read transfer failed %d \n",status);
 	}
+	Wave_Color = Color_Cyan;
 	return;
 }
 
@@ -116,4 +138,134 @@ void PaintRectangular(int x,int y,int width,int height,color c)
 		}
 	}
 	return;
+}
+
+queue_header CreateQueue(int n)
+{
+	queue_header head = (queue_header)malloc(sizeof(queue_node));
+	head->next = NULL;
+	queue_header p = head;
+	if(n<=1)
+	{
+		p->next = head;
+		return head;
+	}
+	for(int i = 0;i<n-1;i++)
+	{
+		p->next = (queue_header)malloc(sizeof(queue_node));
+		p = p->next;
+	}
+	p->next = head;
+	return head;
+}
+
+void DestroyQueue(queue_header qh,int n)
+{
+	queue_header p;
+	queue_header np;
+	p = qh->next;
+	if(n<=1)
+	{
+		free(qh);
+		return;
+	}
+	for(int i = 0;i<n-1;i++)
+	{
+		np = p->next;
+		free(p);
+		p = np;
+	}
+	free(qh);
+	return;
+}
+
+void DrawWave(int y,color c)
+{
+	int x = 0;
+	int node_p = 0;
+	int value_y;
+	int last_y = y;
+	queue_header q = Wave_Queue;
+	int h,pos_y;
+	while(x<1024)
+	{
+		value_y = q->data[node_p++] ;
+		//calculate the position y and height
+		if(value_y>last_y)
+		{
+			//up
+			h = value_y-last_y;
+			pos_y = y-value_y;
+
+		}else if(value_y<last_y)
+		{
+			//down
+			h = last_y-value_y;
+			pos_y = y-(last_y-1);
+
+		}else
+		{
+			//equal
+			h = 1;
+			pos_y = y-value_y;
+		}
+		last_y = value_y;
+		PaintRectangular(x++,pos_y,1,h,c);
+
+		//switch to next queue node if necessary
+		if(node_p>=AUDIO_BYTES_PER_PERIOD/4)
+		{
+			q = q->next;
+			node_p = 0;
+		}
+	}
+}
+
+void UpdateWave()
+{
+	DrawWave(300,&Color_Black);
+	queue_header temp_q = Wave_Queue;
+	Wave_Queue = Wave_Queue->next;
+	ConvertAudioToVideo(GetNowMusicBufferPointer(),
+			temp_q->data,AUDIO_BYTES_PER_PERIOD/4);
+	DrawWave(300,&Color_Cyan);
+}
+
+void DrawVolumeBar(int x,int y,color c)
+{
+	if(x<0 || (x+VIDEO_VOLUME_BAR_WIDTH*16+15+CHARACTER_WIDTH+1)>1023 || y<0 || y+VIDEO_VOLUME_BAR_HEIGHT>599)
+		return;
+	int count = (Audio_Volume+1)/4;
+	if(count<0 || count>16) return;
+	//draw the 'V' first
+	int pos_x = x;
+	DrawCharacter(pos_x,y,Character_V);
+	pos_x += CHARACTER_WIDTH+1;
+	//draw the bar
+	for(int i = 0;i<count;i++)
+	{
+		PaintRectangular(pos_x,y,VIDEO_VOLUME_BAR_WIDTH,VIDEO_VOLUME_BAR_HEIGHT,c);
+		pos_x += VIDEO_VOLUME_BAR_WIDTH+1;
+	}
+	for(int i = 0;i<16-count;i++)
+	{
+		PaintRectangular(pos_x,y,VIDEO_VOLUME_BAR_WIDTH,VIDEO_VOLUME_BAR_HEIGHT,&Color_Black);
+		pos_x += VIDEO_VOLUME_BAR_WIDTH+1;
+	}
+}
+
+void DrawCharacter(int x,int y,u8* character)
+{
+	if(x<0 || x+CHARACTER_WIDTH>1023 || y<0 || y+CHARACTER_HEIGHT>599) return;
+
+	for(int i = 0;i<CHARACTER_HEIGHT;i++)
+	{
+		for(int j = 0;j<CHARACTER_WIDTH;j++)
+		{
+			if(character[i*CHARACTER_WIDTH+j]==1)
+				Screen[(i+y)*VIDEO_WIDTH + x+j] = Color_White;
+			else
+				Screen[(i+y)*VIDEO_WIDTH + x+j] = Color_Black;
+		}
+	}
 }

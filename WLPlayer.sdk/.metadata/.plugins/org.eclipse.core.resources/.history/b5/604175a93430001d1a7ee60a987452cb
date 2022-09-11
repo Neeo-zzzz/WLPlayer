@@ -1,9 +1,0 @@
-#include "defs.h"
-#include "audio.h"
-
-int main()
-{
-	IntcInitialize();
-	AudioInitialize();
-	PlayMusic("land_s.wav");
-}

@@ -62,3 +62,12 @@ platform config -updatehw {D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLP
 bsp reload
 catch {bsp regenerate}
 platform generate -domains standalone_ps7_cortexa9_0 
+platform active {WLPlayer_system}
+platform config -updatehw {D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer_system.xsa}
+bsp reload
+catch {bsp regenerate}
+platform generate -domains standalone_ps7_cortexa9_0 
+platform config -updatehw {D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer_system.xsa}
+bsp reload
+catch {bsp regenerate}
+platform generate -domains standalone_ps7_cortexa9_0 

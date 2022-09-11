@@ -13,8 +13,10 @@
 #include "xaxivdma.h"
 #include "xaxivdma_i.h"
 #include "xstatus.h"
+#include "xgpiops.h"
 #include "sleep.h"
 #include "ff.h"
+#include "xbasic_types.h"
 
 //macro
 

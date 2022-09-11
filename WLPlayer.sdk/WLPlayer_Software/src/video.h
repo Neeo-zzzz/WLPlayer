@@ -1,6 +1,7 @@
 #ifndef _VIDEO_
 #define _VIDEO_
 #include "defs.h"
+#include "audio.h"
 
 /////////////////////////////////macro/////////////////////////////////
 #define VIDEO_VDMA_DEV_ID XPAR_AXI_VDMA_0_DEVICE_ID
@@ -8,6 +9,11 @@
 
 #define VIDEO_HEIGHT 600
 #define VIDEO_WIDTH 1024
+
+#define CHARACTER_WIDTH 10
+#define CHARACTER_HEIGHT 15
+
+#define _DEBUG_VIDEO_
 
 ////////////////////////////////structure////////////////////////////////
 
@@ -20,6 +26,13 @@ typedef struct _pixel
 
 typedef pixel* color;
 
+typedef struct _FIFO_node
+{
+	Xint16 data[AUDIO_BYTES_PER_PERIOD/4];
+	struct _FIFO_node* next;
+} queue_node;
+typedef queue_node* queue_header;
+
 //define of color
 extern pixel Color_Red;
 extern pixel Color_Green;
@@ -29,7 +42,11 @@ extern pixel Color_Yellow;
 extern pixel Color_Cyan;
 extern pixel Color_Purple;
 extern pixel Color_Black;
-extern pixel Color_Write;
+extern pixel Color_White;
+
+extern queue_header Wave_Queue; //the current wave picture queue pointer
+
+extern u8 Character_V[];
 
 //////////////////////////////function///////////////////////////////////
 
@@ -64,6 +81,48 @@ pixel* GetPixel(int x,int y);
  */
 void PaintRectangular(int x,int y,int width,int height,color c);
 
+//FIFO design
 
+/**
+ * create a loop linked queue with n nodes
+ * @param n the number of queue node
+ * @return the pointer to the head of queue
+ */
+queue_header CreateQueue(int n);
+
+/**
+ * free a queue.
+ * @param queue_header the queue to be free
+ * @param int the number of nodes in the queue
+ */
+void DestroyQueue(queue_header qh,int n);
+
+/**
+ * Draw the music wave base on the global varible Wave_Queue
+ * @param int the y position of the wave picture
+ */
+void DrawWave(int y,color c);
+
+/**
+ * Update the wave image
+ */
+void UpdateWave();
+
+//volume control
+
+#define VIDEO_VOLUME_BAR_HEIGHT CHARACTER_HEIGHT
+#define VIDEO_VOLUME_BAR_WIDTH CHARACTER_WIDTH //the width of one block
+
+/**
+ * Draw the volume bar.
+ * height = VIDEO_VOLUME_BAR_HEIGHT
+ * width = VIDEO_VOLUME_BAR_WIDTH*16+15
+ */
+void DrawVolumeBar(int x,int y,color c);
+
+/**
+ * draw the character on the right position.
+ */
+void DrawCharacter(int x,int y,u8* character);
 
 #endif

@@ -1,7 +1,7 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-// Date        : Sat Sep 10 15:30:14 2022
+// Date        : Sun Sep 11 15:53:38 2022
 // Host        : DESKTOP-TFS74FU running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0_stub.v

@@ -1,0 +1,27 @@
+#ifndef _CHARACTER_
+#define _CHARACTER_
+#include "video.h"
+
+#define CHARACTER_WIDTH 10
+#define CHARACTER_HEIGHT 15
+
+pixel Character_V[CHARACTER_WIDTH*CHARACTER_HEIGHT] = {
+	Color_White,0,0,0,0,0,0,0,0,Color_White,
+	Color_White,0,0,0,0,0,0,0,0,Color_White,
+	0,Color_White,0,0,0,0,0,0,Color_White,0,
+	0,Color_White,0,0,0,0,0,0,Color_White,0,
+	0,0,Color_White,0,0,0,0,Color_White,0,0,
+	0,0,Color_White,0,0,0,0,Color_White,0,0,
+	0,0,Color_White,0,0,0,0,Color_White,0,0,
+	0,0,Color_White,0,0,0,0,Color_White,0,0,
+	0,0,0,Color_White,0,0,Color_White,0,0,0,
+	0,0,0,Color_White,0,0,Color_White,0,0,0,
+	0,0,0,Color_White,0,0,Color_White,0,0,0,
+	0,0,0,0,Color_White,Color_White,0,0,0,0,
+	0,0,0,0,Color_White,Color_White,0,0,0,0,
+	0,0,0,0,Color_White,Color_White,0,0,0,0,
+	0,0,0,0,0,0,0,0,0,0,
+	0,0,0,0,0,0,0,0,0,0,
+};
+
+#endif

@@ -1,10 +1,10 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
--- Date        : Thu Sep  8 13:46:39 2022
+-- Date        : Thu Sep  8 13:46:37 2022
 -- Host        : DESKTOP-TFS74FU running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               d:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.gen/sources_1/bd/system/ip/system_axi_vdma_0_0/system_axi_vdma_0_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top system_axi_vdma_0_0 -prefix
+--               system_axi_vdma_0_0_ system_axi_vdma_0_0_stub.vhdl
 -- Design      : system_axi_vdma_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg484-1

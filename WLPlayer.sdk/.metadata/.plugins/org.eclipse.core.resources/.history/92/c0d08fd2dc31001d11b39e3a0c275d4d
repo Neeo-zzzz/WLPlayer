@@ -1,0 +1,12 @@
+#ifndef _GPIO_
+#define _GPIO_
+#include "defs.h"
+#include "audio.h"
+#include "video.h"
+
+#define GPIOPS_DEV_ID XPAR_XGPIOPS_0_DEVICE_ID
+#define GPIO_INTR_ID XPAR_XGPIOPS_0_INTR
+
+
+
+#endif

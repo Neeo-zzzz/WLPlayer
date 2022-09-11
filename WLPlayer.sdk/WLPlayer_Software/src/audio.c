@@ -1,5 +1,6 @@
 #include "audio.h"
 
+
 //////////////////////////////global variable//////////////////////////////
 XAudioFormatter Audio_Adma;
 XI2s_Tx Audio_I2s_Tx;
@@ -18,10 +19,9 @@ u8* Music_Buf = (u8*)AUDIO_BUFFER_BASE;
 
 music* Music_Play_Now; //the music playing now
 u8 Music_Read_Permition; // tell to read new data in, only modified by audio interrupt and read function
+u8 Video_Update_Permit; //update the wave data, change in one period
 
-//u32 music_len;
-//int intr_times;
-//u64 music_buf_addr;
+u8 Audio_Volume; //the play volume, from 0 to 63
 
 //////////////////////////////function//////////////////////////////////////
 
@@ -44,6 +44,8 @@ int AudioInitialize()
 
 	Music_Play_Now = NULL;
 	Music_Read_Permition = 0;
+	Video_Update_Permit = 0;
+	Audio_Volume = 39;
 	return 0;
 }
 
@@ -87,6 +89,7 @@ void AdmaIOCHandler(void* callback)
 
 	Music_Play_Now->intr_times += 1;
 	Music_Play_Now->now_position += AUDIO_BYTES_PER_PERIOD/4*3;
+	Video_Update_Permit = 1;
 
 	if(!Music_Play_Now->is_playing)
 	{
@@ -406,3 +409,35 @@ void ReadWavMusic(music* mp,int buf_num)
 	Xil_DCacheFlush();
 	return;
 }
+
+u32* GetNowMusicBufferPointer()
+{
+	if(Music_Play_Now==NULL) return NULL;
+	else
+	{
+		return (u32*)(Music_Play_Now->intr_times*AUDIO_BYTES_PER_PERIOD + AUDIO_BUFFER_BASE);
+	}
+}
+
+void ConvertAudioToVideo(const u32* audio,Xint16* video,int len)
+{
+	for(int i = 0;i<len;i++)
+	{
+		video[i] = (Xint16)(audio[i]>>4); //todo
+		double temp = (double)video[i] * 100 / 32768;
+		video[i] = (Xint16)temp;
+#ifdef _AUDIO_DEBUG_1_
+		printf("wave: %d\n",video[i]);
+#endif
+	}
+}
+
+void SetVolume(u8 volume)
+{
+	if(volume<0 || volume>63) return;
+	AudioWriteReg(R29_PLAYBACK_HEADPHONE_LEFT_VOLUME_CONTROL,(volume<<2)|0x03);
+	AudioWriteReg(R30_PLAYBACK_HEADPHONE_RIGHT_VOLUME_CONTROL,(volume<<2)|0x03);
+	return;
+}
+
+

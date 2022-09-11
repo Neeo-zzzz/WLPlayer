@@ -25,7 +25,7 @@
 #define AUDIO_PERIOD 8
 #define AUDIO_BYTES_PER_PERIOD 1024 //a ratio of 32*2
 
-#define _AUDIO_DEBUG_
+//#define _AUDIO_DEBUG_
 
 /////////////////////////////struct////////////////////////////////////
 
@@ -106,6 +106,9 @@ enum audio_regs {
 
 extern u8 Music_Read_Permition;
 extern music* Music_Play_Now;
+extern u8 Video_Update_Permit;
+extern u8 Audio_Volume;
+extern XScuGic Intc;
 
 
 /////////////////////////////function//////////////////////////////////
@@ -239,5 +242,24 @@ void ContinueMusic();
  * @param size to read, not large then 3
  */
 void ReadWavMusic(music* mp,int buf_num);
+
+/**
+ * Get the current playing music data pointer
+ * @return u32* failed with NULL return.
+ */
+u32* GetNowMusicBufferPointer();
+
+/**
+ * convert the 20bit signed audio data to 16bit video data and normalization to -100~100
+ * @param u32* audio data
+ * @param u16* video data, destination
+ * @param int the convert length, in 32 bits.
+ */
+void ConvertAudioToVideo(const u32* audio,Xint16* video,int len);
+
+/**
+ * Set the volume, from 0 to 63
+ */
+void SetVolume(u8 volume);
 
 #endif
