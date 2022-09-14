@@ -112,6 +112,8 @@ void UpdateWave();
 
 #define VIDEO_VOLUME_BAR_HEIGHT CHARACTER_HEIGHT
 #define VIDEO_VOLUME_BAR_WIDTH CHARACTER_WIDTH //the width of one block
+#define VIDEO_VOLUME_BAR_POS_X 0
+#define VIDEO_VOLUME_BAR_POS_Y 0
 
 /**
  * Draw the volume bar.
@@ -124,5 +126,7 @@ void DrawVolumeBar(int x,int y,color c);
  * draw the character on the right position.
  */
 void DrawCharacter(int x,int y,u8* character);
+
+
 
 #endif

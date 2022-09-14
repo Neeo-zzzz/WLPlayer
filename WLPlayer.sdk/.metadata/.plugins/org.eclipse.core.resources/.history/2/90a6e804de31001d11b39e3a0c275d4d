@@ -1,9 +1,0 @@
-#include "gpio.h"
-
-XGpioPs Gpio;
-XGpioPs_Config* Gpio_Config;
-
-void GPIOInitialize()
-{
-
-}

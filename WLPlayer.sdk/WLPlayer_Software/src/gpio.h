@@ -26,13 +26,40 @@
  */
 void GPIOInitialize();
 
-static void GPIOInterruptHandler(void* callback);
+void GPIOInterruptHandler(void* callback);
 
 /**
  * Init the interrupt system for GPIO
  */
 void GPIOInterruptInit();
 
+/**
+ * Will be called in main transaction loop.
+ * Check if some key is triggered and call the right callback function.
+ */
+void CheckButtonInterrupt();
 
+//control function
+
+/**
+ * switch the player between play and stop
+ */
+void ControlStopStart();
+
+/**
+ * switch to next music
+ */
+void ControlNextMusic();
+
+/**
+ * switch to last music
+ */
+void ControlLastMusic();
+
+/**
+ * control the volume up/down
+ */
+void ControlVolumeUp();
+void ControlVolumeDown();
 
 #endif

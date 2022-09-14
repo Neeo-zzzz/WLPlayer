@@ -262,4 +262,10 @@ void ConvertAudioToVideo(const u32* audio,Xint16* video,int len);
  */
 void SetVolume(u8 volume);
 
+/**
+ * control the volume up or down
+ */
+void VolumeUp();
+void VolumeDown();
+
 #endif

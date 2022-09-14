@@ -1,12 +1,14 @@
 #include "defs.h"
 #include "audio.h"
 #include "video.h"
+#include "gpio.h"
 
 
 int main()
 {
 	AudioInitialize();
 	VideoInitialize();
+	GPIOInitialize();
 	PlayMusic("land_s.wav");
 	PaintRectangular(0,0,1023,599,&Color_Black);
 	Xil_DCacheFlush();
@@ -26,6 +28,8 @@ int main()
 			UpdateWave();
 			Xil_DCacheFlush();
 		}
+
+		CheckButtonInterrupt();
 	}
 }
 

@@ -88,6 +88,7 @@ void AdmaIOCHandler(void* callback)
 	adma->ChannelId = XAudioFormatter_MM2S;
 
 	Music_Play_Now->intr_times += 1;
+	printf("%d\n",Music_Play_Now->intr_times);
 	Music_Play_Now->now_position += AUDIO_BYTES_PER_PERIOD/4*3;
 	Video_Update_Permit = 1;
 
@@ -440,4 +441,17 @@ void SetVolume(u8 volume)
 	return;
 }
 
+void VolumeUp()
+{
+	Audio_Volume += 4;
+	if(Audio_Volume>=64) Audio_Volume = 63;
+	SetVolume(Audio_Volume);
+}
+
+void VolumeDown()
+{
+	if(Audio_Volume<4) Audio_Volume = 0;
+	else Audio_Volume -= 4;
+	SetVolume(Audio_Volume);
+}
 

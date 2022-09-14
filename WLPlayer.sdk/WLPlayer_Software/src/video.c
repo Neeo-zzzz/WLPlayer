@@ -38,7 +38,6 @@ u8 Character_V[CHARACTER_WIDTH*CHARACTER_HEIGHT] = {
 	0,0,0,0,1,1,0,0,0,0
 };
 
-
 void VideoInitialize()
 {
 	int status;
