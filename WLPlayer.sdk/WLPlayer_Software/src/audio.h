@@ -25,6 +25,8 @@
 #define AUDIO_PERIOD 8
 #define AUDIO_BYTES_PER_PERIOD 1024 //a ratio of 32*2
 
+#define AUDIO_MAX_FILE_COUNT 10
+
 //#define _AUDIO_DEBUG_
 
 /////////////////////////////struct////////////////////////////////////
@@ -109,7 +111,8 @@ extern music* Music_Play_Now;
 extern u8 Video_Update_Permit;
 extern u8 Audio_Volume;
 extern XScuGic Intc;
-
+extern u8 Music_File_Count;
+extern FILINFO Music_Name[AUDIO_MAX_FILE_COUNT];
 
 /////////////////////////////function//////////////////////////////////
 
@@ -267,5 +270,26 @@ void SetVolume(u8 volume);
  */
 void VolumeUp();
 void VolumeDown();
+
+//file directory operation
+
+/**
+ * find all the ".wav" file in the directory, fill the name list in Music_File_Name
+ * @param the path name of the directory
+ */
+void LoadWavFileList(TCHAR* path);
+
+/**
+ * check whether a file is ended with ".wav"
+ * @param char* the name of file
+ * @return 1-is wav 0-no
+ */
+int CheckFileNameWav(char* name);
+
+/**
+ * switch to a new music
+ * @param int the music number in Music_File_List
+ */
+void SwitchMusic(int n);
 
 #endif

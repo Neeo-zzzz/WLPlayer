@@ -23,6 +23,9 @@ u8 Video_Update_Permit; //update the wave data, change in one period
 
 u8 Audio_Volume; //the play volume, from 0 to 63
 
+u8 Music_File_Count; //the music wav file detected counts
+FILINFO Music_Name[AUDIO_MAX_FILE_COUNT]; //the music file name array
+
 //////////////////////////////function//////////////////////////////////////
 
 int AudioInitialize()
@@ -41,6 +44,8 @@ int AudioInitialize()
 	FSInitialize();
 	//configure the ADAU1761 by IIC
 	ConfigADAU1761();
+	//read the music file
+	LoadWavFileList("/"); //todo
 
 	Music_Play_Now = NULL;
 	Music_Read_Permition = 0;
@@ -88,7 +93,6 @@ void AdmaIOCHandler(void* callback)
 	adma->ChannelId = XAudioFormatter_MM2S;
 
 	Music_Play_Now->intr_times += 1;
-	printf("%d\n",Music_Play_Now->intr_times);
 	Music_Play_Now->now_position += AUDIO_BYTES_PER_PERIOD/4*3;
 	Video_Update_Permit = 1;
 
@@ -236,6 +240,7 @@ void ConfigADAU1761()
 	AudioADAUPLLConfigure();
 
 	AudioWriteReg(R16_SERIAL_PORT_CONTROL_1,0x02); //set 8 sclk delay in LR Frame, Right justify.
+
 
 	//set the DAC, power manage, signal route and clock enable
 	AudioWriteReg(R36_DAC_CONTROL_0,0x03); //enable DAC
@@ -416,7 +421,7 @@ u32* GetNowMusicBufferPointer()
 	if(Music_Play_Now==NULL) return NULL;
 	else
 	{
-		return (u32*)(Music_Play_Now->intr_times*AUDIO_BYTES_PER_PERIOD + AUDIO_BUFFER_BASE);
+		return (u32*)(Music_Play_Now->intr_times*AUDIO_BYTES_PER_PERIOD + AUDIO_BUFFER_BASE + Music_Play_Now->current_play_number*AUDIO_PERIOD*AUDIO_BYTES_PER_PERIOD);
 	}
 }
 
@@ -424,7 +429,7 @@ void ConvertAudioToVideo(const u32* audio,Xint16* video,int len)
 {
 	for(int i = 0;i<len;i++)
 	{
-		video[i] = (Xint16)(audio[i]>>4); //todo
+		video[i] = (Xint16)(audio[i*2]>>4); //todo
 		double temp = (double)video[i] * 100 / 32768;
 		video[i] = (Xint16)temp;
 #ifdef _AUDIO_DEBUG_1_
@@ -453,5 +458,64 @@ void VolumeDown()
 	if(Audio_Volume<4) Audio_Volume = 0;
 	else Audio_Volume -= 4;
 	SetVolume(Audio_Volume);
+}
+
+void LoadWavFileList(TCHAR* path)
+{
+	DIR dp;
+	FRESULT status;
+	status = f_opendir(&dp,path);
+	if(status!=FR_OK)
+	{
+		printf("open dir failed %d\n",status);
+	}
+	FILINFO fno;
+	Music_File_Count = 0;
+	while(1)
+	{
+		status = f_readdir(&dp,&fno);
+		if(status != FR_OK || fno.fname[0]==0) break;
+		if(!(fno.fattrib & AM_DIR))
+		{
+			//a file
+			if(CheckFileNameWav(fno.fname))
+			{
+				//right file
+				Music_Name[Music_File_Count++] = fno;
+				printf("read file: %s \n",fno.fname);
+				if(Music_File_Count>= AUDIO_MAX_FILE_COUNT) break;
+			}
+		}
+	}
+}
+
+int CheckFileNameWav(char* name)
+{
+	if(name==NULL) return 0;
+	int i = 0;
+	while(name[i]!=0)
+	{
+		i++;
+	}
+
+	i -= 4;
+	if(i<0) return 0;
+	if((name[i]=='.') && (name[i+1]=='w')
+			&& (name[i+2]=='a')&&(name[i+3]=='v'))
+	{
+		return 1;
+	}else
+	{
+		return 0;
+	}
+}
+
+void SwitchMusic(int n)
+{
+	if(n>Music_File_Count) return;
+	DestroyMusic(Music_Play_Now);
+	Music_Play_Now = NULL;
+	PlayMusic(Music_Name[n].fname);
+	return;
 }
 

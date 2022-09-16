@@ -5,6 +5,7 @@ XGpioPs_Config* Gpio_Config;
 
 u8 Button_Status[5]; //will be set to indicate which button is triggered
 					 //sequence: MID LEFT RIGHT UP DOWN
+u8 Music_Now_Number;
 
 void GPIOInitialize()
 {
@@ -32,6 +33,7 @@ void GPIOInitialize()
 		Button_Status[i] = 0;
 	}
 
+	Music_Now_Number = 0;
 }
 
 void GPIOInterruptHandler(void* callback)
@@ -116,7 +118,11 @@ void CheckButtonInterrupt()
 
 void ControlStopStart()
 {
-	if(!Music_Play_Now) return;
+	if(!Music_Play_Now)
+	{
+		PlayMusic(Music_Name[0].fname);
+		Music_Now_Number = 0;
+	}
 	if(Music_Play_Now->is_playing) StopMusic();
 	else ContinueMusic();
 	printf("stop/start \n");
@@ -124,11 +130,17 @@ void ControlStopStart()
 
 void ControlNextMusic()
 {
+	Music_Now_Number += 1;
+	if(Music_Now_Number >= Music_File_Count) Music_Now_Number = 0;
+	SwitchMusic(Music_Now_Number);
 	printf("next \n");
 }
 
 void ControlLastMusic()
 {
+	if(Music_Now_Number == 0) Music_Now_Number = Music_File_Count -1;
+	else Music_Now_Number -= 1;
+	SwitchMusic(Music_Now_Number);
 	printf("last \n");
 }
 

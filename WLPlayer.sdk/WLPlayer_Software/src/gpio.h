@@ -19,6 +19,9 @@
 #define LED_1 62
 #define LED_2 63
 
+
+extern u8 Music_Now_Number;
+
 /////////////////////////////////function///////////////////////////////
 
 /**

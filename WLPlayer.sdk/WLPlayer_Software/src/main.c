@@ -9,8 +9,9 @@ int main()
 	AudioInitialize();
 	VideoInitialize();
 	GPIOInitialize();
-	PlayMusic("land_s.wav");
 	PaintRectangular(0,0,1023,599,&Color_Black);
+	DrawVolumeBar(0,0,&Color_Cyan);
+	DrawMusicBar(500,0,Music_Now_Number);
 	Xil_DCacheFlush();
 
 	while(1)
@@ -25,10 +26,10 @@ int main()
 		{
 			Video_Update_Permit = 0;
 			DrawVolumeBar(0,0,&Color_Cyan);
+			DrawMusicBar(500,0,Music_Now_Number);
 			UpdateWave();
 			Xil_DCacheFlush();
 		}
-
 		CheckButtonInterrupt();
 	}
 }

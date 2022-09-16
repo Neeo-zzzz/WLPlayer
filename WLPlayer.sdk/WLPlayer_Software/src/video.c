@@ -79,6 +79,7 @@ void VideoInitialize()
 		printf("start vdma read transfer failed %d \n",status);
 	}
 	Wave_Color = Color_Cyan;
+	Wave_Queue = CreateQueue(8);
 	return;
 }
 
@@ -212,7 +213,7 @@ void DrawWave(int y,color c)
 		PaintRectangular(x++,pos_y,1,h,c);
 
 		//switch to next queue node if necessary
-		if(node_p>=AUDIO_BYTES_PER_PERIOD/4)
+		if(node_p>=AUDIO_BYTES_PER_PERIOD/4/2)
 		{
 			q = q->next;
 			node_p = 0;
@@ -226,7 +227,7 @@ void UpdateWave()
 	queue_header temp_q = Wave_Queue;
 	Wave_Queue = Wave_Queue->next;
 	ConvertAudioToVideo(GetNowMusicBufferPointer(),
-			temp_q->data,AUDIO_BYTES_PER_PERIOD/4);
+			temp_q->data,AUDIO_BYTES_PER_PERIOD/4/2);
 	DrawWave(300,&Color_Cyan);
 }
 
@@ -266,5 +267,19 @@ void DrawCharacter(int x,int y,u8* character)
 			else
 				Screen[(i+y)*VIDEO_WIDTH + x+j] = Color_Black;
 		}
+	}
+}
+
+void DrawMusicBar(int pos_x,int pos_y,int music_number)
+{
+	int x = pos_x;
+	for(int i = 0;i<Music_File_Count;i++)
+	{
+		if(i==music_number)
+			PaintRectangular(x,pos_y,VIDEO_VOLUME_BAR_WIDTH,VIDEO_VOLUME_BAR_HEIGHT,&Color_Red);
+		else
+			PaintRectangular(x,pos_y,VIDEO_VOLUME_BAR_WIDTH,VIDEO_VOLUME_BAR_HEIGHT,&Color_Cyan);
+		x += VIDEO_VOLUME_BAR_WIDTH + 1;
+		if(x>=1024) break;
 	}
 }

@@ -1,38 +1,23 @@
 Nothing to build in platform 'WLPlayer_system'
 
-23:09:03 **** Incremental Build of configuration Debug for project WLPlayer_Software ****
+22:37:57 **** Incremental Build of configuration Debug for project WLPlayer_Software ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
 ' '
 make --no-print-directory main-build
-'Building file: ../src/audio.c'
+'Building file: ../src/main.c'
 'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/audio.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/audio.d" -MT"src/audio.o" -o "src/audio.o" "../src/audio.c"
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
 In file included from ../src/defs.h:19,
-                 from ../src/audio.h:4,
-                 from ../src/audio.c:1:
+                 from ../src/main.c:1:
 D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/bspinclude/include/xbasic_types.h:102:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
   102 | #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
       |  ^~~~~~~
 D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/bspinclude/include/xbasic_types.h:103:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
   103 | #warning  Please refer the Standalone BSP UG647 for further details
       |  ^~~~~~~
-'Finished building: ../src/audio.c'
-' '
-'Building file: ../src/video.c'
-'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/video.d" -MT"src/video.o" -o "src/video.o" "../src/video.c"
-In file included from ../src/defs.h:19,
-                 from ../src/video.h:3,
-                 from ../src/video.c:1:
-D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/bspinclude/include/xbasic_types.h:102:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
-  102 | #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
-      |  ^~~~~~~
-D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/bspinclude/include/xbasic_types.h:103:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
-  103 | #warning  Please refer the Standalone BSP UG647 for further details
-      |  ^~~~~~~
-'Finished building: ../src/video.c'
+'Finished building: ../src/main.c'
 ' '
 'Building target: WLPlayer_Software.elf'
 'Invoking: ARM v7 gcc linker'
@@ -42,6 +27,6 @@ arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=non
 'Invoking: ARM v7 Print Size'
 arm-none-eabi-size WLPlayer_Software.elf  |tee "WLPlayer_Software.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 184272	   3756	  31200	 219228	  3585c	WLPlayer_Software.elf
+ 185576	   3756	  34016	 223348	  36874	WLPlayer_Software.elf
 'Finished building: WLPlayer_Software.elf.size'
 ' '

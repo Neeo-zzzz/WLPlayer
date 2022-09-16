@@ -4861,3 +4861,1275 @@ con
 
 23:09:19 INFO  : Launch script is exported to file 'D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\WLPlayer_Software_system\_ide\scripts\debugger_wlplayer_software-default.tcl'
 23:18:38 INFO  : Disconnected from the channel tcfchan#6.
+08:17:43 INFO  : Launching XSCT server: xsct.bat -n  -interactive D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\temp_xsdb_launch_script.tcl
+08:17:47 INFO  : XSCT server has started successfully.
+08:17:47 INFO  : Successfully done setting XSCT server connection channel  
+08:17:47 INFO  : plnx-install-location is set to ''
+08:17:47 INFO  : Successfully done setting workspace for the tool. 
+08:17:48 INFO  : Platform repository initialization has completed.
+08:17:48 INFO  : Registering command handlers for Vitis TCF services
+08:17:51 INFO  : Successfully done query RDI_DATADIR 
+09:02:01 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+09:02:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:02:22 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+09:02:22 INFO  : 'jtag frequency' command is executed.
+09:02:22 INFO  : Context for 'APU' is selected.
+09:02:22 INFO  : System reset is completed.
+09:02:25 INFO  : 'after 3000' command is executed.
+09:02:25 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+09:02:27 INFO  : Device configured successfully with "D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit"
+09:02:27 INFO  : Context for 'APU' is selected.
+09:02:28 INFO  : Hardware design and registers information is loaded from 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa'.
+09:02:28 INFO  : 'configparams force-mem-access 1' command is executed.
+09:02:28 INFO  : Context for 'APU' is selected.
+09:02:28 INFO  : Sourcing of 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl' is done.
+09:02:28 INFO  : 'ps7_init' command is executed.
+09:02:28 INFO  : 'ps7_post_config' command is executed.
+09:02:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:02:29 INFO  : The application 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:02:29 INFO  : 'configparams force-mem-access 0' command is executed.
+09:02:29 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+09:02:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:02:29 INFO  : 'con' command is executed.
+09:02:29 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+09:02:29 INFO  : Launch script is exported to file 'D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\WLPlayer_Software_system\_ide\scripts\debugger_wlplayer_software-default.tcl'
+09:10:02 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+09:10:09 INFO  : Disconnected from the channel tcfchan#1.
+09:10:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:10:10 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+09:10:10 INFO  : 'jtag frequency' command is executed.
+09:10:12 INFO  : Context for 'APU' is selected.
+09:10:12 INFO  : System reset is completed.
+09:10:15 INFO  : 'after 3000' command is executed.
+09:10:15 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+09:10:18 INFO  : Device configured successfully with "D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit"
+09:10:18 INFO  : Context for 'APU' is selected.
+09:10:20 INFO  : Hardware design and registers information is loaded from 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa'.
+09:10:20 INFO  : 'configparams force-mem-access 1' command is executed.
+09:10:20 INFO  : Context for 'APU' is selected.
+09:10:20 INFO  : Sourcing of 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl' is done.
+09:10:20 INFO  : 'ps7_init' command is executed.
+09:10:20 INFO  : 'ps7_post_config' command is executed.
+09:10:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:10:21 INFO  : The application 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf' is downloaded to processor 'ps7_cortexa9_0'.
+09:10:21 INFO  : 'configparams force-mem-access 0' command is executed.
+09:10:21 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+09:10:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+09:10:21 INFO  : 'con' command is executed.
+09:10:21 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+09:10:21 INFO  : Launch script is exported to file 'D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\WLPlayer_Software_system\_ide\scripts\debugger_wlplayer_software-default.tcl'
+09:12:09 INFO  : Disconnected from the channel tcfchan#2.
+21:45:20 INFO  : Launching XSCT server: xsct.bat -n  -interactive D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\temp_xsdb_launch_script.tcl
+21:45:23 INFO  : Platform repository initialization has completed.
+21:45:23 INFO  : Registering command handlers for Vitis TCF services
+21:45:24 INFO  : XSCT server has started successfully.
+21:45:26 INFO  : plnx-install-location is set to ''
+21:45:26 INFO  : Successfully done setting XSCT server connection channel  
+21:45:26 INFO  : Successfully done query RDI_DATADIR 
+21:45:26 INFO  : Successfully done setting workspace for the tool. 
+10:19:30 INFO  : Launching XSCT server: xsct.bat -n  -interactive D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\temp_xsdb_launch_script.tcl
+10:19:34 INFO  : Platform repository initialization has completed.
+10:19:34 INFO  : Registering command handlers for Vitis TCF services
+10:19:34 INFO  : XSCT server has started successfully.
+10:19:35 INFO  : Successfully done setting XSCT server connection channel  
+10:19:37 INFO  : plnx-install-location is set to ''
+10:19:37 INFO  : Successfully done setting workspace for the tool. 
+10:19:37 INFO  : Successfully done query RDI_DATADIR 
+10:52:04 INFO  : Result from executing command 'getProjects': WLPlayer_system
+10:52:04 INFO  : Result from executing command 'getPlatforms': WLPlayer_system|D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/WLPlayer_system.xpfm
+10:52:04 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+10:52:21 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+10:52:33 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:52:33 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+10:52:33 INFO  : 'jtag frequency' command is executed.
+10:52:33 INFO  : Context for 'APU' is selected.
+10:52:33 INFO  : System reset is completed.
+10:52:36 INFO  : 'after 3000' command is executed.
+10:52:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+10:52:39 INFO  : Device configured successfully with "D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit"
+10:52:39 INFO  : Context for 'APU' is selected.
+10:52:39 INFO  : Hardware design and registers information is loaded from 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa'.
+10:52:39 INFO  : 'configparams force-mem-access 1' command is executed.
+10:52:39 INFO  : Context for 'APU' is selected.
+10:52:39 INFO  : Sourcing of 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl' is done.
+10:52:39 INFO  : 'ps7_init' command is executed.
+10:52:39 INFO  : 'ps7_post_config' command is executed.
+10:52:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:52:40 INFO  : The application 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:52:40 INFO  : 'configparams force-mem-access 0' command is executed.
+10:52:40 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+10:52:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:52:40 INFO  : 'con' command is executed.
+10:52:40 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+10:52:40 INFO  : Launch script is exported to file 'D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\WLPlayer_Software_system\_ide\scripts\debugger_wlplayer_software-default.tcl'
+10:56:17 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+10:56:26 INFO  : Disconnected from the channel tcfchan#2.
+10:56:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:56:27 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+10:56:27 INFO  : 'jtag frequency' command is executed.
+10:56:29 INFO  : Context for 'APU' is selected.
+10:56:29 INFO  : System reset is completed.
+10:56:32 INFO  : 'after 3000' command is executed.
+10:56:32 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+10:56:35 INFO  : Device configured successfully with "D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit"
+10:56:35 INFO  : Context for 'APU' is selected.
+10:56:35 INFO  : Hardware design and registers information is loaded from 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa'.
+10:56:35 INFO  : 'configparams force-mem-access 1' command is executed.
+10:56:35 INFO  : Context for 'APU' is selected.
+10:56:35 INFO  : Sourcing of 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl' is done.
+10:56:35 INFO  : 'ps7_init' command is executed.
+10:56:35 INFO  : 'ps7_post_config' command is executed.
+10:56:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:56:36 INFO  : The application 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:56:36 INFO  : 'configparams force-mem-access 0' command is executed.
+10:56:36 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+10:56:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:56:36 INFO  : 'con' command is executed.
+10:56:36 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+10:56:36 INFO  : Launch script is exported to file 'D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\WLPlayer_Software_system\_ide\scripts\debugger_wlplayer_software-default.tcl'
+10:57:27 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+10:57:31 INFO  : Disconnected from the channel tcfchan#3.
+10:57:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:57:33 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+10:57:33 INFO  : 'jtag frequency' command is executed.
+10:57:33 INFO  : Context for 'APU' is selected.
+10:57:33 INFO  : System reset is completed.
+10:57:36 INFO  : 'after 3000' command is executed.
+10:57:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+10:57:38 INFO  : Device configured successfully with "D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit"
+10:57:38 INFO  : Context for 'APU' is selected.
+10:57:38 INFO  : Hardware design and registers information is loaded from 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa'.
+10:57:38 INFO  : 'configparams force-mem-access 1' command is executed.
+10:57:38 INFO  : Context for 'APU' is selected.
+10:57:38 INFO  : Sourcing of 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl' is done.
+10:57:39 INFO  : 'ps7_init' command is executed.
+10:57:39 INFO  : 'ps7_post_config' command is executed.
+10:57:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:57:39 INFO  : The application 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:57:39 INFO  : 'configparams force-mem-access 0' command is executed.
+10:57:39 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+10:57:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:57:39 INFO  : 'con' command is executed.
+10:57:39 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+10:57:39 INFO  : Launch script is exported to file 'D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\WLPlayer_Software_system\_ide\scripts\debugger_wlplayer_software-default.tcl'
+10:58:36 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+10:58:41 INFO  : Disconnected from the channel tcfchan#4.
+10:58:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:58:42 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+10:58:42 ERROR : port closed
+10:58:42 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+10:58:42 ERROR : port closed
+10:58:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:58:47 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+10:58:47 INFO  : 'jtag frequency' command is executed.
+10:58:47 INFO  : Context for 'APU' is selected.
+10:58:48 INFO  : System reset is completed.
+10:58:51 INFO  : 'after 3000' command is executed.
+10:58:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+10:58:53 INFO  : Device configured successfully with "D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit"
+10:58:53 INFO  : Context for 'APU' is selected.
+10:58:53 INFO  : Hardware design and registers information is loaded from 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa'.
+10:58:53 INFO  : 'configparams force-mem-access 1' command is executed.
+10:58:53 INFO  : Context for 'APU' is selected.
+10:58:53 INFO  : Sourcing of 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl' is done.
+10:58:53 INFO  : 'ps7_init' command is executed.
+10:58:53 INFO  : 'ps7_post_config' command is executed.
+10:58:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:58:54 INFO  : The application 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:58:54 INFO  : 'configparams force-mem-access 0' command is executed.
+10:58:54 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+10:58:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:58:54 INFO  : 'con' command is executed.
+10:58:54 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+10:58:54 INFO  : Launch script is exported to file 'D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\WLPlayer_Software_system\_ide\scripts\debugger_wlplayer_software-default.tcl'
+11:02:10 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+11:02:15 INFO  : Disconnected from the channel tcfchan#5.
+11:02:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:02:16 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+11:02:16 INFO  : 'jtag frequency' command is executed.
+11:02:18 INFO  : Context for 'APU' is selected.
+11:02:18 INFO  : System reset is completed.
+11:02:21 INFO  : 'after 3000' command is executed.
+11:02:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+11:02:23 INFO  : Device configured successfully with "D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit"
+11:02:23 INFO  : Context for 'APU' is selected.
+11:02:23 INFO  : Hardware design and registers information is loaded from 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa'.
+11:02:23 INFO  : 'configparams force-mem-access 1' command is executed.
+11:02:23 INFO  : Context for 'APU' is selected.
+11:02:23 INFO  : Sourcing of 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl' is done.
+11:02:24 INFO  : 'ps7_init' command is executed.
+11:02:24 INFO  : 'ps7_post_config' command is executed.
+11:02:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:02:24 INFO  : The application 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:02:24 INFO  : 'configparams force-mem-access 0' command is executed.
+11:02:24 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:02:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:02:25 INFO  : 'con' command is executed.
+11:02:25 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:02:25 INFO  : Launch script is exported to file 'D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\WLPlayer_Software_system\_ide\scripts\debugger_wlplayer_software-default.tcl'
+11:20:34 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+11:20:39 INFO  : Disconnected from the channel tcfchan#6.
+11:20:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:20:41 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+11:20:41 INFO  : 'jtag frequency' command is executed.
+11:20:43 INFO  : Context for 'APU' is selected.
+11:20:43 INFO  : System reset is completed.
+11:20:46 INFO  : 'after 3000' command is executed.
+11:20:46 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+11:20:48 INFO  : Device configured successfully with "D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit"
+11:20:48 INFO  : Context for 'APU' is selected.
+11:20:48 INFO  : Hardware design and registers information is loaded from 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa'.
+11:20:48 INFO  : 'configparams force-mem-access 1' command is executed.
+11:20:48 INFO  : Context for 'APU' is selected.
+11:20:48 INFO  : Sourcing of 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl' is done.
+11:20:49 INFO  : 'ps7_init' command is executed.
+11:20:49 INFO  : 'ps7_post_config' command is executed.
+11:20:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:20:49 INFO  : The application 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:20:49 INFO  : 'configparams force-mem-access 0' command is executed.
+11:20:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:20:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:20:49 INFO  : 'con' command is executed.
+11:20:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:20:49 INFO  : Launch script is exported to file 'D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\WLPlayer_Software_system\_ide\scripts\debugger_wlplayer_software-default.tcl'
+11:21:55 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+11:22:01 INFO  : Disconnected from the channel tcfchan#7.
+11:22:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:22:02 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+11:22:02 INFO  : 'jtag frequency' command is executed.
+11:22:04 INFO  : Context for 'APU' is selected.
+11:22:04 INFO  : System reset is completed.
+11:22:07 INFO  : 'after 3000' command is executed.
+11:22:07 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+11:22:09 INFO  : Device configured successfully with "D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit"
+11:22:09 INFO  : Context for 'APU' is selected.
+11:22:09 INFO  : Hardware design and registers information is loaded from 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa'.
+11:22:09 INFO  : 'configparams force-mem-access 1' command is executed.
+11:22:09 INFO  : Context for 'APU' is selected.
+11:22:09 INFO  : Sourcing of 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl' is done.
+11:22:10 INFO  : 'ps7_init' command is executed.
+11:22:10 INFO  : 'ps7_post_config' command is executed.
+11:22:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:22:10 INFO  : The application 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:22:10 INFO  : 'configparams force-mem-access 0' command is executed.
+11:22:10 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:22:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:22:10 INFO  : 'con' command is executed.
+11:22:10 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:22:10 INFO  : Launch script is exported to file 'D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\WLPlayer_Software_system\_ide\scripts\debugger_wlplayer_software-default.tcl'
+11:30:49 INFO  : Disconnected from the channel tcfchan#8.
+18:01:00 INFO  : Launching XSCT server: xsct.bat -n  -interactive D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\temp_xsdb_launch_script.tcl
+18:01:05 INFO  : Platform repository initialization has completed.
+18:01:05 INFO  : XSCT server has started successfully.
+18:01:05 INFO  : Successfully done setting XSCT server connection channel  
+18:01:05 INFO  : plnx-install-location is set to ''
+18:01:05 INFO  : Registering command handlers for Vitis TCF services
+18:01:08 INFO  : Successfully done setting workspace for the tool. 
+18:01:08 INFO  : Successfully done query RDI_DATADIR 
+20:45:48 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+20:46:06 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+20:46:15 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+20:48:38 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+20:48:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:48:53 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+20:48:53 INFO  : 'jtag frequency' command is executed.
+20:48:53 INFO  : Context for 'APU' is selected.
+20:48:53 INFO  : System reset is completed.
+20:48:56 INFO  : 'after 3000' command is executed.
+20:48:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+20:48:59 INFO  : Device configured successfully with "D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit"
+20:48:59 INFO  : Context for 'APU' is selected.
+20:48:59 INFO  : Hardware design and registers information is loaded from 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa'.
+20:48:59 INFO  : 'configparams force-mem-access 1' command is executed.
+20:48:59 INFO  : Context for 'APU' is selected.
+20:48:59 INFO  : Sourcing of 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl' is done.
+20:48:59 INFO  : 'ps7_init' command is executed.
+20:48:59 INFO  : 'ps7_post_config' command is executed.
+20:48:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:49:00 INFO  : The application 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:49:00 INFO  : 'configparams force-mem-access 0' command is executed.
+20:49:00 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:49:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:49:00 INFO  : 'con' command is executed.
+20:49:00 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:49:00 INFO  : Launch script is exported to file 'D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\WLPlayer_Software_system\_ide\scripts\debugger_wlplayer_software-default.tcl'
+20:59:41 INFO  : Disconnected from the channel tcfchan#1.
+20:59:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:59:57 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+20:59:57 INFO  : 'jtag frequency' command is executed.
+20:59:57 INFO  : Context for 'APU' is selected.
+20:59:58 INFO  : System reset is completed.
+21:00:01 INFO  : 'after 3000' command is executed.
+21:00:01 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+21:00:03 INFO  : Device configured successfully with "D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit"
+21:00:03 INFO  : Context for 'APU' is selected.
+21:00:05 INFO  : Hardware design and registers information is loaded from 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa'.
+21:00:05 INFO  : 'configparams force-mem-access 1' command is executed.
+21:00:05 INFO  : Context for 'APU' is selected.
+21:00:05 INFO  : Sourcing of 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl' is done.
+21:00:06 INFO  : 'ps7_init' command is executed.
+21:00:06 INFO  : 'ps7_post_config' command is executed.
+21:00:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:00:06 INFO  : The application 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:00:06 INFO  : 'configparams force-mem-access 0' command is executed.
+21:00:06 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:00:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:00:07 INFO  : 'con' command is executed.
+21:00:07 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:00:07 INFO  : Launch script is exported to file 'D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\WLPlayer_Software_system\_ide\scripts\debugger_wlplayer_software-default.tcl'
+21:00:18 INFO  : Disconnected from the channel tcfchan#2.
+21:00:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:00:19 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+21:00:19 INFO  : 'jtag frequency' command is executed.
+21:00:20 INFO  : Context for 'APU' is selected.
+21:00:20 INFO  : System reset is completed.
+21:00:23 INFO  : 'after 3000' command is executed.
+21:00:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+21:00:25 INFO  : Device configured successfully with "D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit"
+21:00:25 INFO  : Context for 'APU' is selected.
+21:00:28 INFO  : Hardware design and registers information is loaded from 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa'.
+21:00:28 INFO  : 'configparams force-mem-access 1' command is executed.
+21:00:28 INFO  : Context for 'APU' is selected.
+21:00:28 INFO  : Sourcing of 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl' is done.
+21:00:28 INFO  : 'ps7_init' command is executed.
+21:00:28 INFO  : 'ps7_post_config' command is executed.
+21:00:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:00:29 INFO  : The application 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:00:29 INFO  : 'configparams force-mem-access 0' command is executed.
+21:00:29 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:00:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:00:29 INFO  : 'con' command is executed.
+21:00:29 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:00:29 INFO  : Launch script is exported to file 'D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\WLPlayer_Software_system\_ide\scripts\debugger_wlplayer_software-default.tcl'
+21:00:51 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+21:00:57 INFO  : Disconnected from the channel tcfchan#3.
+21:00:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:00:58 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+21:00:58 INFO  : 'jtag frequency' command is executed.
+21:01:00 INFO  : Context for 'APU' is selected.
+21:01:00 INFO  : System reset is completed.
+21:01:03 INFO  : 'after 3000' command is executed.
+21:01:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+21:01:06 INFO  : Device configured successfully with "D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit"
+21:01:06 INFO  : Context for 'APU' is selected.
+21:01:08 INFO  : Hardware design and registers information is loaded from 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa'.
+21:01:08 INFO  : 'configparams force-mem-access 1' command is executed.
+21:01:08 INFO  : Context for 'APU' is selected.
+21:01:08 INFO  : Sourcing of 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl' is done.
+21:01:08 INFO  : 'ps7_init' command is executed.
+21:01:08 INFO  : 'ps7_post_config' command is executed.
+21:01:08 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:01:09 INFO  : The application 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:01:09 INFO  : 'configparams force-mem-access 0' command is executed.
+21:01:09 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:01:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:01:09 INFO  : 'con' command is executed.
+21:01:09 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:01:09 INFO  : Launch script is exported to file 'D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\WLPlayer_Software_system\_ide\scripts\debugger_wlplayer_software-default.tcl'
+21:02:23 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+21:02:28 INFO  : Disconnected from the channel tcfchan#4.
+21:02:29 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:02:29 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+21:02:30 INFO  : 'jtag frequency' command is executed.
+21:02:32 INFO  : Context for 'APU' is selected.
+21:02:32 INFO  : System reset is completed.
+21:02:35 INFO  : 'after 3000' command is executed.
+21:02:35 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+21:02:37 INFO  : Device configured successfully with "D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit"
+21:02:37 INFO  : Context for 'APU' is selected.
+21:02:39 INFO  : Hardware design and registers information is loaded from 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa'.
+21:02:39 INFO  : 'configparams force-mem-access 1' command is executed.
+21:02:39 INFO  : Context for 'APU' is selected.
+21:02:39 INFO  : Sourcing of 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl' is done.
+21:02:40 INFO  : 'ps7_init' command is executed.
+21:02:40 INFO  : 'ps7_post_config' command is executed.
+21:02:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:02:40 INFO  : The application 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:02:40 INFO  : 'configparams force-mem-access 0' command is executed.
+21:02:40 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:02:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:02:41 INFO  : 'con' command is executed.
+21:02:41 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:02:41 INFO  : Launch script is exported to file 'D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\WLPlayer_Software_system\_ide\scripts\debugger_wlplayer_software-default.tcl'
+21:04:01 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+21:04:07 INFO  : Disconnected from the channel tcfchan#5.
+21:04:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:04:08 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+21:04:08 INFO  : 'jtag frequency' command is executed.
+21:04:08 INFO  : Context for 'APU' is selected.
+21:04:08 INFO  : System reset is completed.
+21:04:11 INFO  : 'after 3000' command is executed.
+21:04:12 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+21:04:14 INFO  : Device configured successfully with "D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit"
+21:04:14 INFO  : Context for 'APU' is selected.
+21:04:16 INFO  : Hardware design and registers information is loaded from 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa'.
+21:04:16 INFO  : 'configparams force-mem-access 1' command is executed.
+21:04:16 INFO  : Context for 'APU' is selected.
+21:04:16 INFO  : Sourcing of 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl' is done.
+21:04:17 INFO  : 'ps7_init' command is executed.
+21:04:17 INFO  : 'ps7_post_config' command is executed.
+21:04:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:04:17 INFO  : The application 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:04:17 INFO  : 'configparams force-mem-access 0' command is executed.
+21:04:17 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:04:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:04:18 INFO  : 'con' command is executed.
+21:04:18 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:04:18 INFO  : Launch script is exported to file 'D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\WLPlayer_Software_system\_ide\scripts\debugger_wlplayer_software-default.tcl'
+21:05:55 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+21:06:00 INFO  : Disconnected from the channel tcfchan#6.
+21:06:01 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:06:01 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+21:06:01 INFO  : 'jtag frequency' command is executed.
+21:06:01 INFO  : Context for 'APU' is selected.
+21:06:01 INFO  : System reset is completed.
+21:06:04 INFO  : 'after 3000' command is executed.
+21:06:05 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+21:06:07 INFO  : Device configured successfully with "D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit"
+21:06:07 INFO  : Context for 'APU' is selected.
+21:06:09 INFO  : Hardware design and registers information is loaded from 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa'.
+21:06:09 INFO  : 'configparams force-mem-access 1' command is executed.
+21:06:09 INFO  : Context for 'APU' is selected.
+21:06:09 INFO  : Sourcing of 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl' is done.
+21:06:10 INFO  : 'ps7_init' command is executed.
+21:06:10 INFO  : 'ps7_post_config' command is executed.
+21:06:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:06:10 INFO  : The application 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:06:10 INFO  : 'configparams force-mem-access 0' command is executed.
+21:06:10 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:06:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:06:11 INFO  : 'con' command is executed.
+21:06:11 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:06:11 INFO  : Launch script is exported to file 'D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\WLPlayer_Software_system\_ide\scripts\debugger_wlplayer_software-default.tcl'
+21:21:15 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+21:21:27 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+21:21:32 INFO  : Disconnected from the channel tcfchan#7.
+21:21:33 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:21:33 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+21:21:33 INFO  : 'jtag frequency' command is executed.
+21:21:33 INFO  : Context for 'APU' is selected.
+21:21:33 INFO  : System reset is completed.
+21:21:36 INFO  : 'after 3000' command is executed.
+21:21:37 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+21:21:39 INFO  : Device configured successfully with "D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit"
+21:21:39 INFO  : Context for 'APU' is selected.
+21:21:41 INFO  : Hardware design and registers information is loaded from 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa'.
+21:21:41 INFO  : 'configparams force-mem-access 1' command is executed.
+21:21:41 INFO  : Context for 'APU' is selected.
+21:21:41 INFO  : Sourcing of 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl' is done.
+21:21:41 INFO  : 'ps7_init' command is executed.
+21:21:41 INFO  : 'ps7_post_config' command is executed.
+21:21:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:21:42 INFO  : The application 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:21:42 INFO  : 'configparams force-mem-access 0' command is executed.
+21:21:42 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:21:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:21:42 INFO  : 'con' command is executed.
+21:21:42 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:21:42 INFO  : Launch script is exported to file 'D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\WLPlayer_Software_system\_ide\scripts\debugger_wlplayer_software-default.tcl'
+21:24:48 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+21:24:54 INFO  : Disconnected from the channel tcfchan#8.
+21:24:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:24:55 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+21:24:55 INFO  : 'jtag frequency' command is executed.
+21:24:55 INFO  : Context for 'APU' is selected.
+21:24:55 INFO  : System reset is completed.
+21:24:58 INFO  : 'after 3000' command is executed.
+21:24:58 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+21:25:00 INFO  : Device configured successfully with "D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit"
+21:25:00 INFO  : Context for 'APU' is selected.
+21:25:02 INFO  : Hardware design and registers information is loaded from 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa'.
+21:25:02 INFO  : 'configparams force-mem-access 1' command is executed.
+21:25:02 INFO  : Context for 'APU' is selected.
+21:25:02 INFO  : Sourcing of 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl' is done.
+21:25:03 INFO  : 'ps7_init' command is executed.
+21:25:03 INFO  : 'ps7_post_config' command is executed.
+21:25:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:25:03 INFO  : The application 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:25:03 INFO  : 'configparams force-mem-access 0' command is executed.
+21:25:03 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:25:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:25:03 INFO  : 'con' command is executed.
+21:25:03 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:25:03 INFO  : Launch script is exported to file 'D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\WLPlayer_Software_system\_ide\scripts\debugger_wlplayer_software-default.tcl'
+21:30:12 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+21:30:17 INFO  : Disconnected from the channel tcfchan#9.
+21:30:18 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:30:18 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+21:30:18 INFO  : 'jtag frequency' command is executed.
+21:30:19 INFO  : Context for 'APU' is selected.
+21:30:19 INFO  : System reset is completed.
+21:30:22 INFO  : 'after 3000' command is executed.
+21:30:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+21:30:25 INFO  : Device configured successfully with "D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit"
+21:30:25 INFO  : Context for 'APU' is selected.
+21:30:27 INFO  : Hardware design and registers information is loaded from 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa'.
+21:30:27 INFO  : 'configparams force-mem-access 1' command is executed.
+21:30:27 INFO  : Context for 'APU' is selected.
+21:30:27 INFO  : Sourcing of 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl' is done.
+21:30:28 INFO  : 'ps7_init' command is executed.
+21:30:28 INFO  : 'ps7_post_config' command is executed.
+21:30:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:30:28 INFO  : The application 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:30:28 INFO  : 'configparams force-mem-access 0' command is executed.
+21:30:28 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:30:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:30:28 INFO  : 'con' command is executed.
+21:30:28 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:30:28 INFO  : Launch script is exported to file 'D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\WLPlayer_Software_system\_ide\scripts\debugger_wlplayer_software-default.tcl'
+22:12:12 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+22:12:18 INFO  : Disconnected from the channel tcfchan#10.
+22:12:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:12:19 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+22:12:19 INFO  : 'jtag frequency' command is executed.
+22:12:19 INFO  : Context for 'APU' is selected.
+22:12:19 INFO  : System reset is completed.
+22:12:22 INFO  : 'after 3000' command is executed.
+22:12:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+22:12:25 INFO  : Device configured successfully with "D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit"
+22:12:25 INFO  : Context for 'APU' is selected.
+22:12:27 INFO  : Hardware design and registers information is loaded from 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa'.
+22:12:27 INFO  : 'configparams force-mem-access 1' command is executed.
+22:12:27 INFO  : Context for 'APU' is selected.
+22:12:27 INFO  : Sourcing of 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl' is done.
+22:12:28 INFO  : 'ps7_init' command is executed.
+22:12:28 INFO  : 'ps7_post_config' command is executed.
+22:12:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:12:28 INFO  : The application 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:12:28 INFO  : 'configparams force-mem-access 0' command is executed.
+22:12:28 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:12:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:12:28 INFO  : 'con' command is executed.
+22:12:28 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+22:12:28 INFO  : Launch script is exported to file 'D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\WLPlayer_Software_system\_ide\scripts\debugger_wlplayer_software-default.tcl'
+22:13:00 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+22:13:10 INFO  : Disconnected from the channel tcfchan#11.
+22:13:11 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:13:11 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+22:13:11 INFO  : 'jtag frequency' command is executed.
+22:13:12 INFO  : Context for 'APU' is selected.
+22:13:12 INFO  : System reset is completed.
+22:13:15 INFO  : 'after 3000' command is executed.
+22:13:15 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+22:13:17 INFO  : Device configured successfully with "D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit"
+22:13:17 INFO  : Context for 'APU' is selected.
+22:13:20 INFO  : Hardware design and registers information is loaded from 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa'.
+22:13:20 INFO  : 'configparams force-mem-access 1' command is executed.
+22:13:20 INFO  : Context for 'APU' is selected.
+22:13:20 INFO  : Sourcing of 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl' is done.
+22:13:20 INFO  : 'ps7_init' command is executed.
+22:13:20 INFO  : 'ps7_post_config' command is executed.
+22:13:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:13:21 INFO  : The application 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:13:21 INFO  : 'configparams force-mem-access 0' command is executed.
+22:13:21 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:13:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:13:21 INFO  : 'con' command is executed.
+22:13:21 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+22:13:21 INFO  : Launch script is exported to file 'D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\WLPlayer_Software_system\_ide\scripts\debugger_wlplayer_software-default.tcl'
+22:16:42 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+22:16:47 INFO  : Disconnected from the channel tcfchan#12.
+22:16:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:16:48 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+22:16:48 INFO  : 'jtag frequency' command is executed.
+22:16:48 INFO  : Context for 'APU' is selected.
+22:16:49 INFO  : System reset is completed.
+22:16:52 INFO  : 'after 3000' command is executed.
+22:16:52 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+22:16:54 INFO  : Device configured successfully with "D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit"
+22:16:54 INFO  : Context for 'APU' is selected.
+22:16:56 INFO  : Hardware design and registers information is loaded from 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa'.
+22:16:56 INFO  : 'configparams force-mem-access 1' command is executed.
+22:16:56 INFO  : Context for 'APU' is selected.
+22:16:56 INFO  : Sourcing of 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl' is done.
+22:16:57 INFO  : 'ps7_init' command is executed.
+22:16:57 INFO  : 'ps7_post_config' command is executed.
+22:16:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:16:57 INFO  : The application 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:16:57 INFO  : 'configparams force-mem-access 0' command is executed.
+22:16:57 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:16:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:16:57 INFO  : 'con' command is executed.
+22:16:57 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+22:16:57 INFO  : Launch script is exported to file 'D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\WLPlayer_Software_system\_ide\scripts\debugger_wlplayer_software-default.tcl'
+22:25:18 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+22:31:56 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+22:32:36 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+22:32:46 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+22:33:08 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+22:33:20 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+22:33:29 INFO  : Disconnected from the channel tcfchan#13.
+22:33:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:33:30 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+22:33:30 INFO  : 'jtag frequency' command is executed.
+22:33:30 INFO  : Context for 'APU' is selected.
+22:33:30 INFO  : System reset is completed.
+22:33:33 INFO  : 'after 3000' command is executed.
+22:33:33 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+22:33:35 INFO  : Device configured successfully with "D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit"
+22:33:35 INFO  : Context for 'APU' is selected.
+22:33:38 INFO  : Hardware design and registers information is loaded from 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa'.
+22:33:38 INFO  : 'configparams force-mem-access 1' command is executed.
+22:33:38 INFO  : Context for 'APU' is selected.
+22:33:38 INFO  : Sourcing of 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl' is done.
+22:33:38 INFO  : 'ps7_init' command is executed.
+22:33:38 INFO  : 'ps7_post_config' command is executed.
+22:33:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:33:39 INFO  : The application 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:33:39 INFO  : 'configparams force-mem-access 0' command is executed.
+22:33:39 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:33:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:33:39 INFO  : 'con' command is executed.
+22:33:39 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+22:33:39 INFO  : Launch script is exported to file 'D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\WLPlayer_Software_system\_ide\scripts\debugger_wlplayer_software-default.tcl'
+22:35:05 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+22:35:11 INFO  : Disconnected from the channel tcfchan#14.
+22:35:12 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:35:12 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+22:35:12 INFO  : 'jtag frequency' command is executed.
+22:35:12 INFO  : Context for 'APU' is selected.
+22:35:12 INFO  : System reset is completed.
+22:35:15 INFO  : 'after 3000' command is executed.
+22:35:15 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+22:35:18 INFO  : Device configured successfully with "D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit"
+22:35:18 INFO  : Context for 'APU' is selected.
+22:35:20 INFO  : Hardware design and registers information is loaded from 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa'.
+22:35:20 INFO  : 'configparams force-mem-access 1' command is executed.
+22:35:20 INFO  : Context for 'APU' is selected.
+22:35:20 INFO  : Sourcing of 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl' is done.
+22:35:20 INFO  : 'ps7_init' command is executed.
+22:35:20 INFO  : 'ps7_post_config' command is executed.
+22:35:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:35:21 INFO  : The application 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:35:21 INFO  : 'configparams force-mem-access 0' command is executed.
+22:35:21 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:35:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:35:21 INFO  : 'con' command is executed.
+22:35:21 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+22:35:21 INFO  : Launch script is exported to file 'D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\WLPlayer_Software_system\_ide\scripts\debugger_wlplayer_software-default.tcl'
+22:36:31 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+22:36:38 INFO  : Disconnected from the channel tcfchan#15.
+22:36:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:36:39 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+22:36:39 INFO  : 'jtag frequency' command is executed.
+22:36:41 INFO  : Context for 'APU' is selected.
+22:36:41 INFO  : System reset is completed.
+22:36:44 INFO  : 'after 3000' command is executed.
+22:36:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+22:36:46 INFO  : Device configured successfully with "D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit"
+22:36:46 INFO  : Context for 'APU' is selected.
+22:36:49 INFO  : Hardware design and registers information is loaded from 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa'.
+22:36:49 INFO  : 'configparams force-mem-access 1' command is executed.
+22:36:49 INFO  : Context for 'APU' is selected.
+22:36:49 INFO  : Sourcing of 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl' is done.
+22:36:49 INFO  : 'ps7_init' command is executed.
+22:36:49 INFO  : 'ps7_post_config' command is executed.
+22:36:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:36:50 INFO  : The application 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:36:50 INFO  : 'configparams force-mem-access 0' command is executed.
+22:36:50 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:36:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:36:50 INFO  : 'con' command is executed.
+22:36:50 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+22:36:50 INFO  : Launch script is exported to file 'D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\WLPlayer_Software_system\_ide\scripts\debugger_wlplayer_software-default.tcl'
+22:37:57 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+22:38:02 INFO  : Disconnected from the channel tcfchan#16.
+22:38:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:38:03 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+22:38:03 INFO  : 'jtag frequency' command is executed.
+22:38:03 INFO  : Context for 'APU' is selected.
+22:38:04 INFO  : System reset is completed.
+22:38:07 INFO  : 'after 3000' command is executed.
+22:38:07 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+22:38:09 INFO  : Device configured successfully with "D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit"
+22:38:09 INFO  : Context for 'APU' is selected.
+22:38:11 INFO  : Hardware design and registers information is loaded from 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa'.
+22:38:11 INFO  : 'configparams force-mem-access 1' command is executed.
+22:38:11 INFO  : Context for 'APU' is selected.
+22:38:11 INFO  : Sourcing of 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl' is done.
+22:38:12 INFO  : 'ps7_init' command is executed.
+22:38:12 INFO  : 'ps7_post_config' command is executed.
+22:38:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:38:12 INFO  : The application 'D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:38:12 INFO  : 'configparams force-mem-access 0' command is executed.
+22:38:12 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/bitstream/WLPlayer_system.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_Software/Debug/WLPlayer_Software.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:38:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:38:12 INFO  : 'con' command is executed.
+22:38:12 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+22:38:12 INFO  : Launch script is exported to file 'D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\WLPlayer_Software_system\_ide\scripts\debugger_wlplayer_software-default.tcl'
+22:41:33 INFO  : Disconnected from the channel tcfchan#17.

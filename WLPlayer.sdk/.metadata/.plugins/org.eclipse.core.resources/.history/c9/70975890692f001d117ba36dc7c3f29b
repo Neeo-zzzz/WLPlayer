@@ -1,8 +1,0 @@
-#ifndef _INTERRUPT_
-#define _INTERRUPT_
-#include "defs.h"
-
-///////////////////////////////////macro//////////////////////////////
-
-
-#endif

@@ -28,7 +28,7 @@ typedef pixel* color;
 
 typedef struct _FIFO_node
 {
-	Xint16 data[AUDIO_BYTES_PER_PERIOD/4];
+	Xint16 data[AUDIO_BYTES_PER_PERIOD/4/2];
 	struct _FIFO_node* next;
 } queue_node;
 typedef queue_node* queue_header;
@@ -127,6 +127,12 @@ void DrawVolumeBar(int x,int y,color c);
  */
 void DrawCharacter(int x,int y,u8* character);
 
-
+/**
+ * base on the Video_Music_Number, plot the music bar
+ * @param int the x postion
+ * @param int the y postion
+ * @param int the now playing music number
+ */
+void DrawMusicBar(int pos_x,int pos_y,int music_number);
 
 #endif
