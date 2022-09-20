@@ -1,0 +1,110 @@
+#include "FFT.h"
+#include "math.h"
+#include "defs.h"
+
+complex_number FFT(sub_sequence* data_t,int k)
+{
+    if(data_t->length<=1)
+    {
+        complex_number r;
+        r.real = (int) data_t->header[0];
+        r.image = 0;
+        return r;
+    }
+
+    //first split the data into two sub seqence
+    sub_sequence odd, even;
+    SplitSequence(data_t,&odd,&even);
+
+    //get the FFT result for the two sub seqence
+    complex_number f_odd, f_even;
+    f_odd = FFT(&odd,k);
+    f_even = FFT(&even,k);
+
+    //combine the result into the real result
+    complex_number r = CAdd(f_even, CTimes(f_odd,GetWParam(data_t->length,k)));
+    return r;
+}
+
+void SplitSequence(sub_sequence* data,sub_sequence* odd,sub_sequence* even)
+{
+    if(data == NULL) return;
+    if(data->length%2!=0) return;
+
+    even->length = data->length/2;
+    even->step = data->step*2;
+    even->header = data->header;
+
+    odd->length = data->length/2;
+    odd->step = data->step*2;
+    odd->header = data->header + data->step;
+}
+
+complex_number CTimes(complex_number n1,complex_number n2)
+{
+    complex_number r;
+    r.real = n1.real*n2.real - n1.image*n2.image;
+    r.image = n1.real*n2.image + n1.image*n2.real;
+    return r;
+}
+
+complex_number CAdd(complex_number n1,complex_number n2)
+{
+    complex_number r;
+    r.real = n1.real + n2.real;
+    r.image = n1.image + n2.image;
+    return r;
+}
+
+double CMold(complex_number n)
+{
+    double r = n.real*n.real + n.image*n.image;
+    return sqrt(r);
+}
+
+complex_number GetWParam(int N,int nk)
+{
+    complex_number r;
+    r.real = 0;
+    r.image = 0;
+    if(N==0) return r;
+    double t = -2*PI*nk/N;
+    r.real = cos(t);
+    r.image = sin(t);
+    return r;
+}
+
+int main()
+{
+    //test
+    int data[1024];
+    double omega = 0.03*2*PI;
+    for(int i = 0;i<1024;i++)
+    {
+        data[i] = (int)((sin(i*omega))*100);
+    }
+
+    sub_sequence seq;
+    seq.header = data;
+    seq.length = 1024;
+    seq.step = 1;
+
+    double result[1024];
+    complex_number r;
+    for(int i = 0;i<1024;i++)
+    {
+        r = FFT(&seq,i);
+        result[i] = CMold(r);
+    }
+
+    FILE* fp = NULL;
+    fp = fopen("data.txt","w");
+
+    for(int i = 0;i<1024;i++)
+    {
+        fprintf(fp,"%d,%lf\n",data[i],result[i]);
+    }
+    printf("success! \n");
+    fclose(fp);
+
+}

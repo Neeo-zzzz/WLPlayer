@@ -15856,3 +15856,162 @@ Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.]. Thread: Worker-84: Launc
 
 !ENTRY com.xilinx.sdk.utils 0 0 2022-09-16 22:41:33.105
 !MESSAGE XSCT command with result: [disconnect tcfchan#17], Result: [null, ]. Thread: Thread-1672
+!SESSION 2022-09-20 22:44:44.882 -----------------------------------------------
+eclipse.buildId=2021.2
+java.version=11.0.11
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.ui 4 4 2022-09-20 22:45:10.231
+!MESSAGE Plug-in 'org.eclipse.ui.editors' contributed an invalid Menu Extension (Path: 'navigate' is invalid): org.eclipse.ui.edit.text.gotoLastEditPosition
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 22:45:16.838
+!MESSAGE XSCT Command: [::hsi::utils::init_repo], Thread: Worker-5: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 22:45:16.839
+!MESSAGE XSCT Command: [set sdk::sdk_chan tcfchan#0], Thread: Thread-25
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 22:45:16.852
+!MESSAGE XSCT Command: [plnx-install-path  ; ::scw::scw_mode gui], Thread: Thread-10
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 22:45:19.746
+!MESSAGE XSCT command with result: [::hsi::utils::init_repo], Result: [null, ]. Thread: Worker-5: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 22:45:19.746
+!MESSAGE XSCT command with result: [set sdk::sdk_chan tcfchan#0], Result: [null, tcfchan#0]. Thread: Thread-25
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 22:45:19.747
+!MESSAGE XSCT Command: [set query_var1 $::env(RDI_DATADIR)], Thread: Worker-5: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 22:45:19.747
+!MESSAGE XSCT command with result: [plnx-install-path  ; ::scw::scw_mode gui], Result: [null, ]. Thread: Thread-10
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 22:45:19.766
+!MESSAGE XSCT Command: [setws D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk], Thread: Thread-25
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 22:45:19.768
+!MESSAGE XSCT command with result: [set query_var1 $::env(RDI_DATADIR)], Result: [null, F:/Xilinx/Vitis/2021.2/data]. Thread: Worker-5: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 22:45:19.797
+!MESSAGE XSCT command with result: [setws D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk], Result: [null, ]. Thread: Thread-25
+
+!ENTRY org.eclipse.launchbar.core 2 0 2022-09-20 22:46:10.787
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2022-09-20 22:46:10.788
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2022-09-20 22:46:10.788
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 22:54:41.672
+!MESSAGE XSCT Command: [::hsi::utils::openhw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa], Thread: Worker-6: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 22:54:43.788
+!MESSAGE XSCT command with result: [::hsi::utils::openhw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa], Result: [null, ]. Thread: Worker-6: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 22:54:43.792
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/system.mss ], Thread: Worker-6: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 22:54:43.804
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-6: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 22:54:43.804
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/system.mss], Thread: Worker-6: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 22:54:43.807
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "7.6",
+}]. Thread: Worker-6: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2022-09-20 22:54:43.809
+!MESSAGE Generating MD5 hash for file: D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\WLPlayer_system\export\WLPlayer_system\sw\WLPlayer_system\standalone_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 22:54:43.815
+!MESSAGE XSCT Command: [::hsi::utils::closesw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/system.mss], Thread: Worker-6: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 22:54:43.817
+!MESSAGE XSCT command with result: [::hsi::utils::closesw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-6: Build Project
+
+!ENTRY com.xilinx.sdx.core 1 0 2022-09-20 22:54:45.681
+!MESSAGE Build step failed, canceling full build chain.
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 22:56:40.903
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/system.mss ], Thread: Worker-6: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 22:56:40.908
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-6: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 22:56:40.909
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/system.mss], Thread: Worker-6: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 22:56:40.912
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "7.6",
+}]. Thread: Worker-6: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2022-09-20 22:56:40.913
+!MESSAGE Generating MD5 hash for file: D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\WLPlayer_system\export\WLPlayer_system\sw\WLPlayer_system\standalone_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 22:56:40.915
+!MESSAGE XSCT Command: [::hsi::utils::closesw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/system.mss], Thread: Worker-6: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 22:56:40.917
+!MESSAGE XSCT command with result: [::hsi::utils::closesw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-6: Build Project
+
+!ENTRY com.xilinx.sdx.core 1 0 2022-09-20 22:56:41.442
+!MESSAGE Build step failed, canceling full build chain.
+
+!ENTRY ilg.gnuarmeclipse.packs.data 4 1 2022-09-20 23:04:03.472
+!MESSAGE File .repos.xml does not exist, using defaults.
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 23:06:58.277
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/system.mss ], Thread: Worker-15: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 23:06:58.281
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-15: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 23:06:58.282
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/system.mss], Thread: Worker-15: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 23:06:58.292
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "7.6",
+}]. Thread: Worker-15: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2022-09-20 23:06:58.292
+!MESSAGE Generating MD5 hash for file: D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\WLPlayer_system\export\WLPlayer_system\sw\WLPlayer_system\standalone_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 23:06:58.293
+!MESSAGE XSCT Command: [::hsi::utils::closesw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/system.mss], Thread: Worker-15: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 23:06:58.295
+!MESSAGE XSCT command with result: [::hsi::utils::closesw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-15: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 23:19:24.492
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/system.mss ], Thread: Worker-16: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 23:19:24.496
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-16: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 23:19:24.496
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/system.mss], Thread: Worker-16: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 23:19:24.499
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/hw/WLPlayer_system.xsa D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "7.6",
+}]. Thread: Worker-16: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2022-09-20 23:19:24.499
+!MESSAGE Generating MD5 hash for file: D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\WLPlayer_system\export\WLPlayer_system\sw\WLPlayer_system\standalone_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 23:19:24.501
+!MESSAGE XSCT Command: [::hsi::utils::closesw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/system.mss], Thread: Worker-16: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2022-09-20 23:19:24.502
+!MESSAGE XSCT command with result: [::hsi::utils::closesw D:/ofcollage/EES_exp/extral/lab_9_player/WLPlayer/WLPlayer.sdk/WLPlayer_system/export/WLPlayer_system/sw/WLPlayer_system/standalone_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-16: Build Project

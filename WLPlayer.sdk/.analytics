@@ -291,3 +291,11 @@ timestamp=[2022-09-16 22:33:21], mode=BUILD, duration=0:00:00.322, duration_ms=3
 timestamp=[2022-09-16 22:35:06], mode=BUILD, duration=0:00:00.900, duration_ms=900, data={name=WLPlayer_Software, configuration=Debug, clean_build=false}
 timestamp=[2022-09-16 22:36:32], mode=BUILD, duration=0:00:00.935, duration_ms=935, data={name=WLPlayer_Software, configuration=Debug, clean_build=false}
 timestamp=[2022-09-16 22:37:58], mode=BUILD, duration=0:00:00.963, duration_ms=963, data={name=WLPlayer_Software, configuration=Debug, clean_build=false}
+timestamp=[2022-09-20 22:45:15], mode=WORKBENCH_START, duration=0:00:08.190, duration_ms=8190, data={}
+timestamp=[2022-09-20 22:45:15], mode=WORKBENCH_UI_INIT, duration=0:00:00.780, duration_ms=780, data={editors_count=8, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,WLPlayer_Software,WLPlayer_Software_system,WLPlayer_system}
+timestamp=[2022-09-20 22:45:16], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.107, duration_ms=107, data={}
+timestamp=[2022-09-20 22:54:45], mode=BUILD, duration=0:00:01.838, duration_ms=1838, data={name=WLPlayer_Software, configuration=Debug, clean_build=false}
+timestamp=[2022-09-20 22:56:41], mode=BUILD, duration=0:00:00.510, duration_ms=510, data={name=WLPlayer_Software, configuration=Debug, clean_build=false}
+timestamp=[2022-09-20 23:06:58], mode=BUILD, duration=0:00:00.280, duration_ms=280, data={name=WLPlayer_Software, configuration=Debug, clean_build=true}
+timestamp=[2022-09-20 23:06:59], mode=BUILD, duration=0:00:01.620, duration_ms=1620, data={name=WLPlayer_Software, configuration=Debug, clean_build=false}
+timestamp=[2022-09-20 23:19:25], mode=BUILD, duration=0:00:00.696, duration_ms=696, data={name=WLPlayer_Software, configuration=Debug, clean_build=false}

@@ -6133,3 +6133,15 @@ con
 
 22:38:12 INFO  : Launch script is exported to file 'D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\WLPlayer_Software_system\_ide\scripts\debugger_wlplayer_software-default.tcl'
 22:41:33 INFO  : Disconnected from the channel tcfchan#17.
+22:45:12 INFO  : Launching XSCT server: xsct.bat -n  -interactive D:\ofcollage\EES_exp\extral\lab_9_player\WLPlayer\WLPlayer.sdk\temp_xsdb_launch_script.tcl
+22:45:16 INFO  : Platform repository initialization has completed.
+22:45:16 INFO  : Registering command handlers for Vitis TCF services
+22:45:16 INFO  : XSCT server has started successfully.
+22:45:19 INFO  : Successfully done setting XSCT server connection channel  
+22:45:19 INFO  : plnx-install-location is set to ''
+22:45:19 INFO  : Successfully done query RDI_DATADIR 
+22:45:19 INFO  : Successfully done setting workspace for the tool. 
+22:54:41 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+22:56:40 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+23:06:58 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
+23:19:24 INFO  : Checking for BSP changes to sync application flags for project 'WLPlayer_Software'...
