@@ -19,6 +19,8 @@ pixel* Screen;
 queue_header Wave_Queue; //the current wave picture queue pointer
 pixel Wave_Color;
 
+u16 FFT_Data[BYTES_PER_FIFO_NODE * FIFO_NODE_NUMBER];
+
 //character
 u8 Character_V[CHARACTER_WIDTH*CHARACTER_HEIGHT] = {
 	1,0,0,0,0,0,0,0,0,1,
@@ -79,7 +81,7 @@ void VideoInitialize()
 		printf("start vdma read transfer failed %d \n",status);
 	}
 	Wave_Color = Color_Cyan;
-	Wave_Queue = CreateQueue(8);
+	Wave_Queue = CreateQueue(FIFO_NODE_NUMBER);
 	return;
 }
 
@@ -223,12 +225,18 @@ void DrawWave(int y,color c)
 
 void UpdateWave()
 {
-	DrawWave(300,&Color_Black);
+	// wave
+	DrawWave(200,&Color_Black);
 	queue_header temp_q = Wave_Queue;
 	Wave_Queue = Wave_Queue->next;
 	ConvertAudioToVideo(GetNowMusicBufferPointer(),
 			temp_q->data,AUDIO_BYTES_PER_PERIOD/4/2);
-	DrawWave(300,&Color_Cyan);
+	DrawWave(200,&Color_Cyan);
+
+	//FFT
+	DrawFFTBar(200,350,&Color_Black);
+	CalculateFFTData();
+	DrawFFTBar(200,350,&Color_Cyan);
 }
 
 void DrawVolumeBar(int x,int y,color c)
@@ -281,5 +289,52 @@ void DrawMusicBar(int pos_x,int pos_y,int music_number)
 			PaintRectangular(x,pos_y,VIDEO_VOLUME_BAR_WIDTH,VIDEO_VOLUME_BAR_HEIGHT,&Color_Cyan);
 		x += VIDEO_VOLUME_BAR_WIDTH + 1;
 		if(x>=1024) break;
+	}
+}
+
+Xint16 GetMusicWaveData(int number)
+{
+	if(number<0 || number > BYTES_PER_FIFO_NODE*FIFO_NODE_NUMBER)
+		return 0;
+
+	int n,c;
+	n = number/BYTES_PER_FIFO_NODE;
+	c = number%BYTES_PER_FIFO_NODE;
+	queue_node* qp = Wave_Queue;
+	for(int i = 0;i<n;i++)
+	{
+		qp = qp->next;
+	}
+	return qp->data[c];
+}
+
+void CalculateFFTData()
+{
+	sub_sequence seq;
+	seq.header = 0;
+	seq.length = FFT_BAR_LENGTH;
+	seq.step = FFT_SAMPLE_STEP;
+	double temp;
+	for(int i = 0;i<seq.length/2;i++)
+	{
+		temp = CMold(FFT(&seq,i))/4;
+		if(temp>200) temp = 200.0;
+		if(temp<0) temp = 0;
+		FFT_Data[seq.length/2-i-1] = (u16)temp;
+		FFT_Data[seq.length/2+i] = (u16)temp;
+	}
+}
+
+void DrawFFTBar(int pos_x,int pos_y,color c)
+{
+	if(pos_x + FFT_BAR_LENGTH > 1024 || pos_y + 200 > 600) return;
+
+	int y = pos_y + 200;
+	for(int i = 0;i<200;i++)
+	{
+		for(int j = 0;j<FFT_Data[i];j++)
+		{
+			PaintRectangular(pos_x+i,y-j,1,1,c);
+		}
 	}
 }

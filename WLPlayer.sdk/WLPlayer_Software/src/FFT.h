@@ -6,7 +6,7 @@
 //the sub sequence of the sample data array
 typedef struct _sub_sequence
 {
-    Xint16* header;
+    int header;
     int length;
     int step;
 } sub_sequence;

@@ -6,7 +6,8 @@ complex_number FFT(sub_sequence* data_t,int k)
     if(data_t->length<=1)
     {
         complex_number r;
-        r.real = (int) data_t->header[0];
+        Xint16 wave_data = GetMusicWaveData(data_t->header);
+        r.real = (double) wave_data;
         r.image = 0;
         return r;
     }
@@ -73,38 +74,38 @@ complex_number GetWParam(int N,int nk)
     return r;
 }
 
-//for debug and test
-int test_FFT()
-{
-    //test
-    Xint16 data[1024];
-    double omega = 0.03*2*PI;
-    for(int i = 0;i<1024;i++)
-    {
-        data[i] = (int)((sin(i*omega))*100);
-    }
-
-    sub_sequence seq;
-    seq.header = data;
-    seq.length = 1024;
-    seq.step = 1;
-
-    double result[1024];
-    complex_number r;
-    for(int i = 0;i<1024;i++)
-    {
-        r = FFT(&seq,i);
-        result[i] = CMold(r);
-    }
-
-    FILE* fp = NULL;
-    fp = fopen("data.txt","w");
-
-    for(int i = 0;i<1024;i++)
-    {
-        fprintf(fp,"%d,%lf\n",data[i],result[i]);
-    }
-    printf("success! \n");
-    fclose(fp);
-    return 0;
-}
+////for debug and test
+//int test_FFT()
+//{
+//    //test
+//    Xint16 data[1024];
+//    double omega = 0.03*2*PI;
+//    for(int i = 0;i<1024;i++)
+//    {
+//        data[i] = (int)((sin(i*omega))*100);
+//    }
+//
+//    sub_sequence seq;
+//    seq.header = data;
+//    seq.length = 1024;
+//    seq.step = 1;
+//
+//    double result[1024];
+//    complex_number r;
+//    for(int i = 0;i<1024;i++)
+//    {
+//        r = FFT(&seq,i);
+//        result[i] = CMold(r);
+//    }
+//
+//    FILE* fp = NULL;
+//    fp = fopen("data.txt","w");
+//
+//    for(int i = 0;i<1024;i++)
+//    {
+//        fprintf(fp,"%d,%lf\n",data[i],result[i]);
+//    }
+//    printf("success! \n");
+//    fclose(fp);
+//    return 0;
+//}
